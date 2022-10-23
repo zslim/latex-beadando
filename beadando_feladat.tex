@@ -1,0 +1,621 @@
+\documentclass[a4paper,12pt]{thesis-ekf}
+\usepackage[T1]{fontenc}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+\footnotestyle{rule=fourth}
+\usepackage{paralist}
+\begin{document}
+
+    \title{Jókai Mór neoabszolutizmus-modellje\\Az új földesúr című regénye alapján}
+    \author{Limbek Zsófia}
+    \date{2014}
+    \institute{Közép-Európa szakirány}
+    \logo{\includegraphics[width=8cm]{mcc_logo-kek}}
+    \city{Budapest}
+    \supervisor{Csunderlik Péter}
+
+    \maketitle
+    \tableofcontents
+
+    % TODO: Függelék átírásának befejezése
+    % TODO: kötőjelek
+    % TODO: felsorolások
+    % TODO: dátumok, pl. lábjegyzetben
+    % TODO: bekezdések elkülönítése
+    % TODO: feltételek átnézése
+    % TODO: 6. Definiáljon az amsthm csomag segítségével egy definicio nevű számozott tételszerű környezetet definition stílussal, melynek címe „Definíció”, a számlálóőse pedig a fejezet (chapter) száma.
+    % TODO: 9. terjedelmi követelmények ellenőrzése (bevezető fejezet elhagyása?)
+    % TODO: 10. kép
+    % TODO: 11. három szint mélységű lista (valamelyik adag subsection átalakítása?)
+    % TODO: 12. custom környezet használata, hivatkozás rá névelővel
+    % TODO: innentől kb az összes többi követelmény ellenőrzése
+    % TODO: új bekezdés vs új sor ellenőrzése
+
+    \chapter{Bevezetés – a modellezésről}\label{ch:bevezetes--a-modellezesrol}
+
+    Jókai Mór a magyar irodalom egy igen megosztó alakja. 
+    Tisztelői előszeretettel illetik ,,a nagy magyar mesemondó'' névvel, míg munkája sokak szerint élvezhetetlen.
+    Vannak, akik vitatják, hogy regényeinek van-e helye az általános- illetve a középiskolai kötelező olvasmányok 
+        között\footnote{Balla István (2012): Arató: Hoffmannt kihagyták. Interjú Arató Lászlóval.
+            fn.hir24.hu, \emitdate{c}{2012-02-28}
+            Elérhető: \url{http://fn.hir24.hu/nagyinterju/2012/02/28/hoffmannt-kihagytak-az-alaptantervbol/}.
+            Hozzáférés ideje: \emitdate{c}{2014-11-28}},
+        miközben a másik oldal szerint Jókai a klasszikus magyar irodalom olyan jelentőségű alakja, hogy semmiképp
+        nem hagyható le a listáról.
+
+    Jókaival kapcsolatban az egyik leghangsúlyosabb kritika az, hogy régies nyelvezete és sok helyen megjelenő 
+        terjengőssége miatt nehezen befogadható, unalmas\footnote{
+            \url{http://www.konyv7.hu/magyar/egyeb-menupontok/blogok/a-szerk-blogja/unalmas-remekmuvek}
+            Hozzáférés ideje: \emitdate{c}{2014-11-28}}.
+    Ez azonban csak a felszín – az érdekes kérdések, természetesen, a regények elolvasása után kezdődnek.
+    Ezen a mélyebb szinten merül fel a másik általános bírálat Jókaival szemben, miszerint az általa leírt valóság csak 
+        illúzió\footnote{Imre László (2004): Fried István: Öreg Jókai nem vén Jókai. Tiszatáj, 2004. szeptember, 55-59.},
+        jellemábrázolásai felszínesek, és történelmi regényeiben, bár a cselekményt valós események köré fűzi,
+        azoktól elszakad, leírásai inkább mitologikusak, mint történelmiek\footnote{
+            \url{http://www.literatura.hu/irok/romantik/jokai.htm}
+            Hozzáférés ideje: \emitdate{c}{2014-11-28}}.
+
+    Dolgozatomban ez utóbbi jelenséggel szeretnék foglalkozni, azonban nem teszem fel előre, hogy egyszerűsítéseket
+        alkalmazni hiba.
+    A közgazdaságtan igen nagy mértékben támaszkodik erre az eszközre, mikor modelleket épít, és azok segítségével
+        próbálja leírni a valóságot.
+    Hogy pontosan hogy egyszerűsítünk (mely elemeket hagyjuk el, illetve melyeket tartjuk meg), az attól függ,
+        hogy az adott helyzetből éppen mit szeretnénk kihangsúlyozni.
+    Döntenünk kell a szemléltetés részletességéről is: egy túl egyszerű modell használatát megnehezítheti a
+        pontatlansága, viszont ha túlbonyolítjuk, könnyen elveszhet a mondanivalója.
+    Tehát egy állapot vagy folyamat bemutatására e szempontok alapján többféle modell is építhető.
+
+    Véleményem szerint az irodalom is modelleket épít, méghozzá hasonló gondolatmenet alapján.
+    A párhuzam erőltetettnek tűnhet, hiszen a gazdaság összetettsége miatt egyszerűsítések nélkül csak annyira
+        bonyolultan tudnánk azt leírni, aminek már nem is lenne értelme – de miért ne lenne igaz ez a társadalomra is?
+    Az 1850-es évek Magyarországát Jókai ugyanúgy személyes érdekek, motivációk, döntések rendszerén keresztül írja le,
+        mint a közgazdászok a gazdasági rendszert.
+    A párhuzam ellen szólhat, hogy köztudottan még senkinek nem sikerült tökéletesen leírnia a gazdaság működését
+        (ami kvázi legitimálja a modellek alkalmazását), míg ez ,,az emberek'', a társadalom viszonylatában,
+        főleg irodalmi vonatkozásban, talán kevésbé egyértelmű.
+    Szerintem viszont teljesen egzakt leírás nem lehetséges, hiszen minden szerző sajátos, egyéni módon gondolkodik
+        a világról, amitől nem tudja teljesen függetleníteni magát.
+    Nem is kell, hiszen nem tudományos igényű művekről van szó, hanem szépirodalomról.
+    Innentől azonban megalapozottan tekinthetünk modellnek minden olyan szépirodalmi koncepciót, látásmódot,
+        amely azonosítható valós alapokkal rendelkezik.
+    Tehát például a történelmi regényeket.
+
+    Jókai Mór Az új földesúr című művét modellként elemezni azért is érdekes, mert a szerző, saját leírása szerint,
+        ,,egy regényében sem igyekezett a kort, melyben története [\dots] fejlődik, annyira híven ecsetelni,
+        mint >>Az új földesúr<<-ban''\footnote{Jókai Mór (1895): Az új földesúr. Utóhang. Magyar Elektronikus könyvtár.
+            Elérhető: \url{http://mek.oszk.hu/00600/00693/html/04.htm}.
+            Hozzáférés ideje: \emitdate{c}{2014-11-28}}.
+    Ennek ellenére a regény bővelkedik csak tisztán jó- és tisztán rosszindulatú szereplőkben, a magyar föld népe
+        minden bajból kiküzdi magát, a rossz pedig mindig elnyeri méltó büntetését;
+        ma egyikről sem gondoljuk, hogy a valóságban így van, vagy valaha így lett volna.
+    Jókai kijelentését inkább úgy értelmezem, hogy ebben a regényében szerette volna leginkább átadni,
+        hogy ő hogy élte meg azt a kort, amiben a mű játszódik.
+    (Ez evidenciának tűnhet, de szerintem fontos kiemelni a különbséget.)
+    És itt visszaértünk a modellépítés gondolatmenetéhez: a modellező számára fontos részletek kiemeléséhez
+        és a lényegtelenek elhagyásához.
+
+    Mindezek alapján Az új földesúr szerintem minden további nélkül tekinthető Jókai saját neoabszolutizmus-modelljének.
+    A következőkben sorra veszem a modell felépítését és működését, illetve megpróbálok következtetni arra,
+        hogy Jókai milyen szempontok alapján építhette azt.
+
+
+    \chapter{A modell összetevői}\label{ch:a-modell-osszetevoi}
+    
+    \section{A változók és kapcsolatuk}\label{sec:a-valtozok-es-kapcsolatuk}
+
+    Meglátásom szerint egy történelmi regénnyel leírt modell alkotóelemei három csoportba sorolhatók: 
+        események, személyek és világnézetek (vagy morál, erkölcs, értékrend, ahogy tetszik).
+    E három csoport egymáshoz való viszonya meghatározza az egész regényt. 
+    Az események kategóriája egyértelmű. 
+    A személyekhez az egyes szereplők céljait, motivációit, és ezekre irányuló döntéseit sorolom, 
+        míg értékrendjük egy-egy külön változót alkot.
+
+    Jókai rendszerint rögzíti az erkölcsi kategóriába tartozó változókat: 
+        regényeire nem jellemző a jellemfejlődés ábrázolása, a szereplők ebből a szempontból statikusak. 
+    Határozottan elkülönülnek a ,,jó'' és a ,,rossz'' személyiségek (ha van is köztes kategória, abba csak néhány
+        jelentéktelenebb szereplő tartozik).
+    Az, hogy egy szereplő ezek közül melyikbe tartozik, meghatározza, hogy céljai eléréséhez milyen eszközöket használ fel.
+
+    A személyek és események viszonya már regényenként különbözik.
+    Például A kőszívű ember fiaiban és a Török világ Magyarországon-ban az események ,,erősebbek'' a szereplőknél:
+        bár a főszereplők mindkét esetben viszonylag nagy hatalommal, befolyással rendelkeznek, mégis nekik kell az
+        eseményekhez (pl. felülről érkező politikai döntés, egy csata vagy háború kimenetele) alkalmazkodniuk.
+    Az események itt kívülről adott, exogén változók, míg a személyek cselekedetei
+        (természetesen a hozzájuk tartozó erkölcsi jellemzőknek megfelelően) reagálnak azokra, tehát endogének.
+    Az új földesúrban ez éppen fordítva van, itt a személyek irányítják az eseményeket.
+    Ez alól persze kivétel a kiindulási állapot (a kiépült neoabszolutizmus), de a regény meghatározó történéseire
+        (az új szomszéd megjelenése, Aladár kiszabadulása, még az árvíz is ide tartozik) igaz,
+        hogy azokat a szereplők akarata és tettei idézték elő.
+    Itt tehát a szereplők adottak kívülről, és az eseményeket kapjuk meg a modellből.
+
+    Egy modellt nem csak a változók alkotnak, hanem az azokat összekapcsoló összefüggések is.
+    Az új földesúr esetében, hogy az összefüggéseket megtaláljuk, azt kell megnézni, hogy bizonyos szereplők
+        találkozásából milyen események következnek.
+    Például lehet az egy összefüggés, hogy ahol két jó találkozik, ott valami jó fog történni;
+        vagy az, hogy ha egy jó és egy rossz kerül kapcsolatba, akkor a rossz végül alulmarad.
+    (Ez két végletesen leegyszerűsített példa, csak a szemléltetés kedvéért hoztam fel őket.)
+    Az új földesúr modelljének összefüggéseit a változók leírása után vizsgálom.
+
+    A modell változóinak részletezését a személyekkel kezdem, értékrendjük szerint csoportosítva őket.
+
+
+    \section{Az új földesúr szereplői}\label{sec:az-uj-foldesur-szereploi}
+
+    A regény szereplői egyrészt jók vagy rosszak, illetve szükségét láttam egy köztes kategóriának is.
+    Másrészt el lehet különíteni a szereplőket aszerint is, hogy osztrákok vagy magyarok.
+    (Ez utóbbi csoportosítás nem teljesen pontos, de szemléletes;
+        Ankerschmidt lovag nagyrészt cseh származású házanépét az osztrákokhoz sorolom.)
+    Nem meglepő módon a magyarok általában jók, és az osztrákok általában rosszak, de vannak kivételek.
+
+    A szereplőkről részletesebb leírás található a függelékben, ebben a pontban csak felsorolom őket, mint a modell változóit.
+
+    \subsection{,,Jó'' szereplők}
+
+    A jók idealizált karakterek.
+    Esetleg furcsa szokásuk, bogaruk lehet, de azok kezelhetők, megszokhatók, más rossz tulajdonáguk pedig nincs.
+    Céljaik érthetőek és befogadhatóak, elérésükért tisztességesen küzdenek
+        (ez a tisztesség időnként megengedi a törvények áthágását, máskor viszont törvényben megengedett dolgot tilt).
+
+    A következők tartoznak ide:
+
+    \begin{compactitem}
+        \item Garanvölgyi Ádám
+        \item Kampós uram
+        \item Ankerschmidt lovag
+        \item Eliz (később Erzsike)
+        \item Garanvölgyi Aladár
+    \end{compactitem}
+
+    \subsection{,,Rossz'' szereplők}
+
+    A rossz karakterek sokkal kevésbé kidolgozottak, mint a jók.
+    Szerepük kimerül abban, hogy kihívást állítanak a jók elé, illetve időnként megnevettetnek minket.
+    A személyiségükről csak annyi derül ki, amennyi e funkciók betöltéséhez szükséges.
+
+    Az új földesúrban feltűnő rossz karakterek:
+
+    \begin{compactitem}
+        \item Dr. Grisák
+        \item Straff Péter
+        \item Pajtayné (Corinna)
+        \item Bräuhäusel úr
+        \item Mikucsek úr
+    \end{compactitem}
+
+    \subsection{,,A szerencsétlenek''}
+
+    Ebbe a kategóriába azokat sorolom, akik ugyan nem rosszak vagy rosszindulatúak, de nem is szimpatikusak,
+        és nem jönnek rá időben, hogy rosszul döntöttek.
+    Ezek a szereplők önmagukban jelentéktelenek, az a legfontosabb funkciójuk, hogy alanyul szolgálnak
+        a jók és a rosszak cselekedeteihez, viszonyának bemutatásához.
+
+    Ebbe a csoportba a következőket soroltam:
+
+    \begin{compactitem}
+        \item Hermine
+        \item Missz Natalie
+        \item Maxenpfutsch Vendelin
+    \end{compactitem}
+
+
+    \section{A regény eseményei}\label{sec:a-regeny-esemenyei}
+
+    Az eseményeket tekintem tehát endogén változóknak, ezek azok, amelyek kiszámításához szükségünk van
+        a modell összefüggéseire és az eddig ismertetett exogén változókra.
+    Az eseményeket csoportokba (cselekményszálakba) rendezem aszerint, hogy mely szereplők befolyásolják őket legerősebben.
+    A regény cselekményének részletes leírása a függelékben található, itt csak felsorolom a fontosabb eseményeket.
+
+    Amikor Garanvölgyit írok, az mindig Garanvölgyi Ádámot jelöli, Garanvölgyi Aladárt csak Aladárnak nevezem.
+
+    \subsection{A Garanvölgyi-Ankerschmidt szál}
+
+    \begin{compactitem}
+        \item Vita a régi kastélyról
+        \item Eliz levele Garanvölgyinek
+        \item A yorkshire-i disznók ellopása és a betakarítás Ankerschmidtéknél
+        \item Ankerschmidt, Garanvölgyi tudta nélkül, Aladár szabadulásán kezd el ügyködni
+        \item A két öregúr között mély barátság alakul ki
+        \item Garanvölgyi és Ankerschmidt ,,bajtársak'' lesznek a politika színterén
+    \end{compactitem}
+
+    \subsection{A Straff Péter körüli események}
+
+    \begin{compactitem}
+        \item Straff Garanvölgyiéknél (mint ál-Petőfi)
+        \item Straff Ankerschmidtéknél (mint Bogumil)
+        \item Bräuhäusel úr házkutatást tart az ócska kastélyban
+        \item Hermine megszöktetése
+        \item Straff túlfeszíti az ,,arkhimédeszi csavar''-t
+        \item Straff összekeveri Pajtayné leveleit
+    \end{compactitem}
+
+    \subsection{Pajtayné játszmái}
+
+    \begin{compactitem}
+        \item Pajtayné viszonya udvarlóival és vőlegényével
+        \item Pajtayné sikertelen kísérletet tesz a régi udvarlók visszacsalogatására
+    \end{compactitem}
+
+    \subsection{Aladár cselekményszála}
+
+    \begin{compactitem}
+        \item Eliz beleszeret Aladárba
+        \item Ankerschmidt meglátogatja Aladárt a börtönben
+        \item Aladár találkozása nagybátyjával, Ankerschmidttel és Pajtaynével
+        \item Ankerschmidt és Aladár útja a gátakról hazafelé
+        \item Erzsike és Aladár egymásba szeretnek és összeházasodnak
+    \end{compactitem}
+
+    \chapter{A modell összefüggései}\label{ch:a-modell-osszefuggesei}
+
+    Eddig igazából csak azonosítottam a regény szereplőit és eseményeit, a dolgozatom érdemi része most következik.
+    Ebben a részben azt vizsgálom, hogy a szereplők tulajdonságaiból (exogén változókból)
+        hogyan határozódnak meg az események (endogén változók), azaz hogy milyen szabályok léteznek Jókai modelljében.
+    Ezek az összefüggések általánosságokat mondanak ki, a konkrét következmények a konkrét résztvevőktől függnek.
+    A modell szabályai olyankor érvényesülnek, amikor több szereplő olyan helyzetbe kerül, hogy a céljaik összefüggnek,
+        ezért döntéseik hatással vannak egymásra.
+    Ezt én az egyszerűség kedvéért találkozásnak nevezem, de jelentheti egyszerűen csak az érdekeik ,,találkozását'' is
+        (akár közösek ezek az érdekek, akár ellentétesek).
+
+    Meglátásom szerint elegendő csak a páronkénti találkozásokat vizsgálni.
+    Természetesen vannak események, amik kettőnél több szereplő közreműködésével alakulnak ki,
+        de a karakterek egymásra gyakorolt hatása parciális, nem függ össze.
+
+    \section{Két jó karakter találkozása}\label{sec:ket-jo-karakter-talalkozasa}
+
+    Jókai legtöbb regényéhez hasonlóan Az új földesúrban is teljesül az a szabály,
+        hogy ha két jó szereplő találkozik, akkor abból valami jó dolog következik.
+    Egyrészt jó kapcsolat alakul ki köztük (barátok lesznek, vagy éppen egymásba szeretnek),
+        másrészt amit együtt csinálnak, az is jól sikerül.
+
+    Jó szereplők között kialakuló barátságra a legfontosabb példa Ankerschmidt és Garanvölgyi,
+        de Ankerschmidt jó barátságot alakít ki Kampóssal és Aladárral is.
+    Együttműködésük eredménye pl. a jó helyre épült Ankerschmidt-sírbolt, illetve a víz által beszorított emberek kimentése.
+    Az eddigieken kívül kívül Garanvölgyi és Erzsike kapcsolata is ide sorolható.
+    Természetesen e szabály alapján fejlődik ki Aladár és Erzsike szerelme.
+
+    Láthatjuk, hogy a két jó szereplő találkozására vonatkozó összefüggés a regény összes jó szereplőjére teljesül
+        (akik nem a regény során kötnek barátságot, azok már a történet kezdete előtt is barátok voltak).
+
+    \section{Egy jó és egy rossz karakter találkozása}\label{sec:egy-jo-es-egy-rossz-karakter-talalkozasa}
+
+    Szintén jellegzetes Jókai-összefüggés, ami Az új földesúrra is jellemző, hogy egy rossz karakter
+        sok fájdalmat és viszontagságot okozhat egy jónak, de végül saját csapdájába esik, és így a jó kerekedik felül.
+    Hogy egy ilyen viszony mennyire jelent komoly kihívást a jó szereplőnek, az a két érintett fél szellemi képességeitől,
+        intelligenciájától függ.
+    Minél okosabb a rossz karakter, annál nagyobb bajt tud keverni, illetve minél okosabb a jó,
+        annál kevésbé érinti rosszul a helyzet.
+
+    Erre a szabályra a legfontosabb példa Grisák és Ankerschmidt, illetve Straff és Ankerschmidt találkozása.
+        Grisák nem túl okos, inkább csak ráérez arra, hogy hogyan tudja kihasználni a helyzetét.
+    Ennek megfelelően az általa okozott problémák lassan jelentkeznek, és viszonylag könnyen kezelhetőek.
+    A történet végére Ankerschmidt rájön, hogy Grisák nem jó ember, akinek így valószínűleg elvész az egyik
+        legjobban fizető ügyfele.
+    Grisákkal ellentétben azonban Straff kifejezetten okos, ennek megfelelően a tettei következményei is komolyabbak
+        (pl. Hermine halála is hozzá köthető).
+    Célját (a meggazdagodást) azonban nem sikerül elérnie, tehát alulmarad.
+
+    További példák az összefüggés teljesülésére Pajtayné és Aladár viszonyának alakulása, Kampós uram és
+        Bräuhäusel úr találkozása az öreg kastély átkutatása kapcsán, illetve Mikucsek úr és ,,a nép'' interakciója.
+    (Ez utóbbi esetben Mikucsek úr a gátszakítással az ott élőknek okoz óriási károkat, Mikucseket ellenben csak
+        egyvalaki öli meg, de a gyilkost a nép képviselőjének tekintem.)
+
+    \section{Két rossz karakter találkozása}
+
+    A rossz szereplők találkozására általánosan igaz, hogy eleinte együtt tudnak működni,
+        de végeredményben kölcsönösen akadályozzák egymást céljaik elérésében.
+
+    Ez az összefüggés a három fő rossz karakter (Grisák, Straff és Pajtayné) között teljesül.
+    Miután Hermine meghal, Grisák elesik egy nagyobb összegtől, Straffnak viszont vissza kell mennie a cabinet noir-ba.
+    Pajtayné kiszolgáltatná Straffot Ankerschmidtnek, az viszont cserébe megfosztja Corinnát az udvarlóitól.
+    És végül, Corinna játszadozik Grisákkal, de Grisák a történet végén minden együtt töltött percet
+        kiszámláz neki ügyvédi konzultációként.
+
+    \section{,,A szerencsétlenek''}\label{sec_a-szerencsetlenek''}
+
+    Az előbb kifejtett három összefüggés alkotja a modell magját.
+    Jókai azonban árnyalja a képet (javítja a modell pontosságát) azzal, hogy a se nem jó, se nem rossz karakterekre is
+        alkalmaz szabályokat.
+    Ezek szerint ha egy ,,szerencsétlen'' egy jóval találkozik, az a két szereplő elidegenedésével végződik,
+    mivel a ,,szerencsétlen'' nem hajlandó a valójában fontos dolgokkal foglalkozni, ezért nem érti a jókat.
+    Erre ad példát Eliz és missz Natalie, vagy Kampós és Maxenpfutsch viszonya.
+    Ha egy ,,szerencsétlen'' egy rossz karakterrel találkozik, akkor viszont a rossz jól,
+        míg a ,,szerencsétlen'' rosszul jár.
+    Ez történik például Straff és Hermine, illetve Straff és Maxenpfutsch esetében.
+
+    \chapter{A modell használata és értékelése}
+
+    \section{Becslés a modell segítségével}
+
+    A közgazdaságtanban nem csak azért építünk modelleket, hogy állapotokat és folyamatokat írjunk le, hanem azért is,
+        hogy következtetéseket tudjunk levonni olyan helyzetekről, amikre nincs megfigyelésünk.
+    Erre egy irodalmi modell is alkalmas.
+    Itt természetesen nem időbeli előrejelzésre kell gondolni, hanem pl. azt tudjuk megmondani a modell segítségével,
+        hogy milyen irányt vettek volna az események, ha két olyan szereplő találkozik, akik a regényben nem találkoztak.
+
+    A jó szereplők között minden lehetséges találkozás megvalósult a történet során, vannak viszont olyan jó‑rossz párok,
+        akik izgalmasan alakíthatták volna a történetet.
+    Ilyen például az Aladár-Straff páros.
+    Ha útjaik keresztezik egymást, egész biztos, hogy a helyzetből Aladár került volna ki győztesen,
+        az azonban már nem egyértelmű, hogy milyen áron.
+    Ők a regény két legokosabb szereplője, de azt nem tudjuk, hogy kettejük közül ki az intelligensebb,
+        ezért ennél pontosabb becslést nem tudunk adni.
+    Egy másik érdekes páros Eliz és Pajtayné, akik szintén nagyjából egyenrangúnak tűnnek.
+    Biztosan az ő esetükben is csak azt lehet állítani, hogy Eliz maradna felül, de azt tippelem, hogy eleinte még
+        Pajtayné állna nyerésre.
+
+    Talán kevésbé izgalmas, de szintén a modell segítségével megválaszolható kérdés, hogy mi lett volna,
+        ha Aladár találkozik a misszel, Maxenpfutsch úrral, vagy Hermine-nel.
+    A~\ref{sec_a-szerencsetlenek''}. összefüggésnek megfelelően azt tartom valószínűnek, hogy nem értenék meg,
+        esetleg nem is érdekelnék egymást.
+    Talán Hermine kivétel lehet ez alól, őt ugyanis nem sok választja el a jóktól.
+
+    \section{A modell értékelése}
+
+    A modell felépítésének áttekintése után érdemes megvizsgálni, hogy Jókai milyen egyszerűsítéseket alkalmazott.
+    Ebből ugyanis, mint már írtam, kiderül, hogy mit tartott lényegesnek, és mit elhagyhatónak.
+
+    A legfontosabb, Jókaira általánosan jellemző egyszerűsítés a valósághoz képest az erkölcsi kategóriák számának
+        drasztikus lecsökkentése (kettőre, legfeljebb háromra).
+    Eszerint lehetséges, hogy Jókai nem tartotta fontosnak, vagy megörökítésre alkalmasnak az ember belső küzdelmeit,
+        vagy a nehezen megítélhető személyiségeket.
+    Egy másik nagyon hangsúlyos egyszerűsítés az, hogy Jókai egész egyszerűen nem ábrázol jellemfejlődést.
+    Bár történetei éveken keresztül folynak le, a szereplők tökéletesen ugyanolyanok a kezdet és a befejezés pillanatában.
+    Ebből arra következtetek, hogy a szerző számára a külső, emberek közötti események nagyobb jelentőséggel bírtak,
+        esetleg könnyebben tudta ezeket leírni, mint egy személyiség változását.
+    Valamivel kisebb jelentőségű egyszerűsítés, hogy a rossz szereplőket csak annyira dolgozta ki,
+        amennyire a jók szemszögéből ez szükséges volt.
+    A rosszaknak csak azokról a céljaikról tudunk, amiket a jókkal konfrontálódva akarnak elérni, és csak azokról
+        a tulajdonságaikról, amik problémát jelenthetnek.
+
+    Az új földesúrban használt összefüggések szintén elég egyszerűek.
+    Csak az adott szereplők erkölcsi hovatartozása és esetleg az intelligenciája számít, semmi más.
+    (Nem veszi figyelembe a múltjukat, a kapcsolataikat, pillanatnyi állapotukat, képzettségüket, stb.)
+    Az eddigiekkel ellentétben azonban Jókainak nem szokása az eseményeket leegyszerűsítve ábrázolni.
+    Éppen ellenkezőleg, szívesen időz olyan részleteken, amik szemléletesebbé vagy viccesebbé tehetik a leírást.
+    Ez alapján az a benyomásom, hogy célja a cselekmény minél érzékletesebb átadása volt,
+        a személyek pontos ábrázolását ennek alárendelte, jóval kevésbé tartotta fontosnak.
+
+    Az eddigi, általánosabb megállapítások után rátérek arra, hogy Jókai milyen egyszerűsítéseket alkalmazott
+        a neoabszolutizmus leírásánál.
+    Ezek közül a legfeltűnőbb a magyar – jó, osztrák – rossz párhuzam.
+    Bár a történet elején vannak rossz magyarok és jó osztrákok, a végére ez az anomália is megszűnik.
+    (Természetesen nem a jók válnak rosszakká, vagy fordítva, hanem a jó osztrákok magyarrá válnak,
+        a rossz magyarok pedig gyakorlatilag osztrákká.)
+    Ez arra enged következtetni, hogy Jókai a neoabszolutista irányítás és az irányítottak konfliktusát
+        ekvivalensnek látta az osztrákok és a magyarok harcával.
+    Ezt erősíti, hogy szívesen ábrázolja a magyarokat talpraesettnek, találékonynak, ügyesnek,
+        míg az osztrákokat ostobának, szerencsétlenkedőnek és merevnek.
+    A neoabszolutizmus alapját jelentő bürokrácia Jókai leírása szerint nem hatékony, és a nevetségességig
+        ostobán működik, időnként igen káros is lehet, elvileg megkerülhetetlen, mégis könnyű kijátszani.
+    Mind az aktív, mind a passzív ellenállást tiszteletre méltó erénynek tekinti, bár csak egy-két példán mutatja be őket.
+
+    Fontos hangsúly a történetben a régi és az új szembeállítása is.
+    A régi épület, újságok, eszme, tapasztalat, szokások az osztrákok szemében gyanúsak, időnként tiltják is őket,
+        de a magyar mégis ezekhez ragaszkodik, és jól teszi.
+    Ezzel szemben az új kastély, a technológia, a tőzsde, és az egész új rendszer hamis, rosszul működik,
+        és előbb-utóbb úgyis összedől, megbukik.
+    Az osztrákok persze ragaszkodnak hozzájuk, és csak saját hibájukból képesek tanulni.
+    A magyarokra erőltetett idegen hatalom ellenére azonban még mindig érvényesek azok az alapvető igazságok,
+        melyek szerint az igaz szívek egymásra találnak, a jók megkapják méltó jutalmukat, a rosszak pedig büntetésüket.
+    Ezek nyújtanak biztos pontot a nehéz időkben.
+
+    A modell alapján tehát úgy tűnik, hogy Jókai a neoabszolutizmust valószínűleg egy nehezen működő, igazságtalan,
+        erőszakos rendszernek látta, amit az osztrákok kényszerítettek a magyarokra.
+    Lehetségesnek tartotta azonban ellenállni a kényszernek, sőt azokra nézett fel, akik ezt tették.
+    Mindezek megfelelnek a modelltől független tudásunknak Jókai Mór nézeteit illetően.
+
+    \chapter{Összefoglalás}
+
+    Dolgozatom elején kifejtettem, hogy egy történelmi regény tekinthető olyan modellnek, ami a szerzője által
+        fontosnak talált részletek kiemelésével mutatja be az adott történelmi helyzetet.
+    Jókai Mór Az új földesúr című regénye emiatt tekinthető egy, a neoabszolutizmust leíró modellnek.
+    A változók közül exogénnek tekintem a személyeket és erkölcsi hovatartozásukat, míg az események endogén változók.
+    A történet szereplőinek céljait, motivációit és döntéseit veszem figyelembe.
+    Erkölcsileg három kategóriát definiáltam: a jókat, a rosszakat és a ,,szerencsétleneket''.
+    Az eseményeket négy fő cselekményszálra bontottam.
+
+    A modell alapösszefüggései a következők.
+    Két jó karakter találkozásából jó kapcsolat és eredményes munka származik.
+    Ha egy jó és egy rossz szereplő akad össze, abból a jó félnek baja lehet, de végül legyőzi a rosszat.
+    Két rossz karakter találkozása először jónak tűnhet, de később egymás kölcsönös gáncsolásához vezet.
+
+    Megmutattam, hogy a modell hogyan használható becslésre.
+    Végül pedig megvizsgáltam, hogy a modell felépítésénél Jókai milyen egyszerűsítéseket alkalmazott a valósághoz képest,
+        és megpróbáltam arra következtetni, hogy miért épp ezeket használta.
+    Arra jutottam, hogy a cselekmények pontos leírását fontosabbnak tartja a személyábrázolásnál,
+        illetve hogy a neoabszolutizmust a magyarok és az osztrákok küzdelmeként élte meg.
+
+    \chapter{Függelék}
+
+    \section{A regény szereplői}
+
+    \subsection{,,Jó'' szereplők}
+
+    Garanvölgyi Ádám
+    A regény főszereplője, a passzív ellenállás megtestesítője Ádám úr. A szabadságharc bukása, az új rendszer létrejötte és unokaöccsének elvesztése hatására fásult közönybe süllyedt, céljairól lemondott. Az iránta tanúsított jóindulat belőle is jóindulatot vált ki, míg a rosszindulat makacsságot és szarkazmust.
+
+    Kampós uram
+    Garanvölgyi kasznárja. Kampós Ádám úr ellentéte: aktív ellenálló, tevékeny, sokat beszél, folyton jön-megy. Gazdájához feltétlenül lojális és ragaszkodó, az ő érdekeit szolgálja mindenek felett. Nem olyan okos, mint a körülötte élő uraságok (pl. Straff különösebb nehézség nélkül becsapja), de a saját társadalmi szintjén a legintelligensebbek közé tartozik. Kampós gyakorlatilag az ideális jószágigazgató. Az osztrákoknak rendre túljár az eszén, és közben remekül szórakozik.
+
+    Ankerschmidt lovag
+    A regény másik főszereplője, nyugalmazott katonatiszt; osztrák, de mégis jó. Értékrendje korrekt és szimpatikus, és emellett nagyon szilárd. Jó kapcsolatban van Béccsel, de nem feltétlen kiszolgálója a rendszernek. Célja egy modern gazdaság létrehozása és működtetése az új birtokon. Hiányossága, hogy nem jó emberismerő, amit pl. Straff és Grisák is alaposan kihasznál. A regény végére elmagyarosodik.
+
+    Eliz (később Erzsike)
+    Ankerschmidt kisebbik lánya, a másik ,,jó osztrák''. Apjához hasonlóan karizmatikus egyéniség, vele ellentétben azonban jó emberismerő. Erkölcse teljesen egyezik apjáéval, viselkedése viszont kevésbé merev, nőiessége ebben nyilvánul meg. Célja egyrészt a család békéjének fenntartása, mikor erre szükség van, másrészt miután beleszeret Aladárba, az ő boldogulása. Mindkettőért kész komoly áldozatot vállalni. Eliz karaktere igazi romantikus hősnő, a regény végére még a neve is magyar lesz.
+
+    Garanvölgyi Aladár
+    Garanvölgyi Ádám unokaöccse és fogadott fia. A történet elején státusfogoly Kufsteinben, még tíz év hátra van a fogságából. Talán még az eddigieknél is erősebben idealizált karakter, ami kapcsolatban lehet azzal, hogy Jókai, többi főszereplővel ellentétben, egy konkrét valós személyről mintázta6. Amíg a helyzete reménytelen, beéri kevéssel, de ahogy javulnak a kilátásai, új célokat tűz ki maga elé, és keményen dolgozik értük. Mindent tisztességesen csinál, a váratlan helyzeteket is mély nyugalommal kezeli, gyorsan és jól tájékozódik.
+
+    5.1.2. ,,Rossz'' szereplők
+    A rossz karakterek sokkal kevésbé kidolgozottak, mint a jók. Szerepük kimerül abban, hogy kihívást állítanak a jók elé, illetve időnként megnevettetnek minket. A személyiségükről csak annyi derül ki, amennyi e funkciók betöltéséhez szükséges.
+
+    Dr. Grisák
+    A korrupt bürokrata karakterét testesíti meg. Csak az motiválja, ha valamiből haszna van, tehát ha pénzre, vagy egy fontos pozícióban levő ember kegyére tesz szert. A regényben Ankerschmidten élősködik. Nem elég gátlástalan azonban ahhoz, hogy kifejezetten gonosz legyen.
+
+    Straff Péter
+    A regény legördögibb figurája: hazug, tisztességtelen, alattomos és gátlástalan; kihasznál mindenkit, akit csak tud. Neki is egyetlen célja, hogy minél több pénzhez jusson, és ennek érdekében akárkinek keresztbe tesz. Egyébként eredetileg a ,,cabinet noir'' munkatársa, azaz ő bontja fel és olvassa el a postára adott, gyanúsnak tűnő leveleket.
+
+    Pajtayné
+    Az öreg Garanvölgyi sógornője és Aladár menyasszonya, elosztrákosodott magyar. Legfőbb jellemvonása, hogy szívtelen – udvarlói éppúgy hidegen hagyják, mint egykori hazája sorsa. Csak a maga hasznát keresi. Egy ideig úgy tűnik, hogy ehhez elég okos, de Straffot például alábecsüli.
+
+    Bräuhäusel úr
+    Kerületi biztos, szintén egy korrupt hivatalnok. Butasága a regény egyik humorforrása.
+
+    Mikucsek úr
+    Róla még azt sem tudjuk, hogy milyen hivatala van, de ő is a rendszer élősdije. Neki nem a butasága, hanem az ügyefogyottsága van kiemelve.
+
+    5.1.3. ,,A szerencsétlenek''
+    Ebbe a kategóriába azokat sorolom, akik ugyan nem rosszak vagy rosszindulatúak, de nem is szimpatikusak, és nem jönnek rá időben, hogy rosszul döntöttek. Ezek a szereplők önmagukban jelentéktelenek, az a legfontosabb funkciójuk, hogy alanyul szolgálnak a jók és a rosszak cselekedeteihez, viszonyának alakulásához.
+
+    Hermine
+    Ankerschmidt nagyobbik lánya. Keveset tudunk róla, csak azt, hogy lelkiismeretes, nagyon szép, és hogy apjához hasonlóan rossz emberismerő.
+
+    Missz Natalie
+    Az Ankerschmidt-lányok nevelőnője. Elizt nem tudja kezelni, mivel vele ellentétben képtelen a felszín mögé látni. Korlátolt, fontoskodó nő, akivel Straff és Grisák is kedve szerint játszik.
+
+    Maxenpfutsch Vendelin
+    Ankerschmidt jószágigazgatója. Kampóssal ellentétben nem ért eléggé a dolgához, viszont nagyképű. Mikor felgyorsulnak körülötte az események, nem tudja követni őket, és mindig abban bízik, akiben nem kéne.
+
+    5.2. A regény cselekményszálai
+
+    A regény cselekményét négy szálra bontottam, az alapján, hogy melyik szereplő gyakorolja a legnagyobb befolyást az eseményekre. Egy szálon belül a történések időrendben vannak, de az előzmények sokszor másik cselekményszálban találhatók. Emiatt elsőre nehéz lehet rekonstruálni az egész regényt a leírásom alapján, de segítségül elkészítettem a függelék második pontjában található Gantt-diagramot, ami szerintem jól szemlélteti a cselekmény menetét.
+
+    5.2.1. Ankerschmidt és Garanvölgyi
+    a) Ankerschmidt lovag földet vásárolt Pajtaynétól, az öreg Garanvölgyi közvetlen szomszédságában, és elkezd felépíteni rajta egy modern gazdaságot. A két öregúr először azért kerül kapcsolatba, mert Ankerschmidtnek útjában áll egy régi, lakatlan kastély, amit azonban Garanvölgyi nem enged lerombolni. A viszonyuk így feszülten indul.
+    b) A következő ponton Ankerschmidt személyesen viszi Garanvölgyihez Eliz levelét, hogy megtudja, mi áll benne. A két szomszéd viszonya megenyhül, de továbbra is távolságtartóak maradnak.
+    c) Közben nyomon követhetjük az Ankerschmidt-gazdaság helyzetét. A lovag hiába ölt bele sok pénzt, nem minden működik terv szerint az első évben, több dolog miatt is nevetség tárgya lesz. Kampós felajánlja a segítségét és a tanácsait Maxenpfutschnak, de az csak a saját kárán tanulja meg, hogy Kampósnak volt igaza. A szálnak ez a része a nagyképű tudományoskodást állítja szembe az igazi tudással és talpraesettséggel.
+    d) Ankerschmidt tudomást szerez Aladárról, és elkezd ügyködni a szabadulása érdekében. Megírat egy folyamodványt dr. Grisákkal, amit Pajtaynéval, mint Aladár menyasszonyával akar letisztáztatni. Pajtayné azonban talál rá ürügyet, hogy ezt visszautasítsa.
+    e) Hermine halála után Ankerschmidt támogatást kap Garanvölgyiéktől egyrészt a részvétük kifejezése által, másrészt Ádám úr felajánlja neki, hogy arra a dombra építtesse az új családi sírboltot, amelyiken a Garanvölgyi családé is van.
+    f) Az árvíz és az eljegyzés után már igazi barátok lesznek. Ankerschmidt elkezd magyar földesúrként politizálni, és mikor Garanvölgyi végül feladja a passzív ellenállást és visszatér a közéletbe, Ankerschmidttel egymás oldalán harcolnak a magyar érdekeket képviselve.
+
+    5.2.2. Straff Péter ámokfutása
+    a) Kampós uram Garanvölgyi birtokán bújtatja Straffot, aki elhitette vele, hogy ő Petőfi Sándor. Garanvölgyi azonban átlát a szitán, és Kampós elkergeti Straffot.
+    b) Straff ekkor álnevet vált, és különböző hazugságokkal beférkőzik Ankerschmidtékhez, ahol végül zongoratanár lesz. Missz Natalie és Hermine odavannak érte, csak Eliz idegenkedik tőle. Levelet is ír Garanvölgyinek, amiben figyelmezteti, hogy Straff sok mindenről tud, amiből Ádám úrnak baja lehet.
+    c) Straff később kilesi Kampóst a romos kastélyban, jelentést tesz, és emiatt Bräuhäusel úr vezetésével vizsgáló bizottság érkezik, hogy házkutatást tartson. Ankerschmidt rögtön rájön, hogy Straff adta fel Garavölgyit, és elkergeti a házától.
+    d) Amíg azonban Ankerschmidt Bécsben, illetve Kufsteinben van Aladár ügyében, Straff Maxenpfutschot és missz Natalie-t kihasználva megszökteti és elveszi Hermine-t. Ankerschmidtet megviseli lányának szökése, és nagy lökést ad neki a magyarosodás felé. Magyar módra szakállt növeszt, Elizt pedig Erzsikének kezdi hívni.
+    e) A körülmények miatt és dr. Grisák ráhatására Maxenpfutsch és a missz is összeházasodnak. Straff azonban csak a pénzéért vette el Hermine-t, és mikor Ankerschmidt, Straff foglalkozása miatt, megtagadja Hermine örökségének kiadását, Straff rosszul kezd bánni a feleségével.
+    f) Végül Erzsike elintézi, hogy nővére hazamehessen, de Hermine akkor már nagyon beteg. A válás meggyógyíthatná, de Straff mindig több és több pénzt akar a válóper aláírásáért cserébe. Végül túl sokáig feszíti a húrt, és Hermine meghal.
+    g) Straff visszakerül korábbi állásába a cabinet noir-ba, és összekeveri Pajtayné leveleit (ld. lejjebb).
+
+    5.2.3. Pajtayné játszmái
+    a) Pajtayné már az első fejezetben szóba kerül, ugyanis a földek, amiket eladott Ankerschmidtnek, valójában az öreg Garanvölgyi birtokához tartoztak. Pajtayné dr. Grisák és az új törvények segítségével sajátította ki és adta el őket. Itt megismerjük öt udvarlóját, akiket lenyűgöz azzal, hogy mindig annak mutatja magát, akit az adott úriember látni szeretne benne. Kiderül az is, hogy Straff Pajtayné megbízásából van Garanvölgyi közelében, abból a célból, hogy az öregúrra nézve terhelő dolgokat tudjon meg. Pajtayné ezeket készül felhasználni arra, hogy Aladár esetleges korábbi szabadulását megakadályozza, mivel a házassági szerződésükkel most Aladár járna jobban. (Grisák itt két tűz közé kerül, mert Ankerschmidt és Pajtayné is vele akarja elintéztetni Aladár szabadulását, illetve nem szabadulását.)
+    b) Aladár kiszabadulása után Bécsbe költözik, ahol azonban majdnem az egész vagyonát elveszti a tőzsdén. Azzal a szándékkal, hogy udvarlóival felfrissítse a kapcsolatot, Balatonfüredre utazik. De az udvarlóknak írt levelek Straffnál kötnek ki a cabinet noir-ban, aki az egyikben talál egy saját magát fenyegető célzást. Ezért bosszúból összekeveri Pajtayné leveleit, hogy mindegyik ahhoz kerüljön, akiről valami rosszat ír. Így Pajtayné egyszerre veszti el az összes udvarlóját. Végül éppen Straff felé fordulnak a szándékai, de ennek a szálnak a kimenetelét már nem tudjuk meg.
+
+    5.2.4. Aladár
+    a) A régi kastély átkutatása miatt Eliz meglát egy képet Aladárról, és elolvassa Ádám úr Aladárhoz írt leveleit. Ennek hatására kérvényt ír Aladár szabadulásáért, de a levél persze megint Ankerschmidt kezébe kerül. Abban állapodnak meg, hogy Ankerschmidt kieszközöli Aladár szabadon engedését, de Eliz sosem találkozhat Aladárral, nehogy úgy tűnjön, mintha érdekből segített volna neki.
+    b) Ankerschmidt meglátogatja a börtönben Aladárt, és gorombáskodik vele, hogy elterelje magáról a gyanút.
+    c) Aladár, miután kiszabadul, hazamegy a nagybátyjához, és visszaadja a látogatást Ankerschmidtnek. Ezután felkeresi Pajtaynét, és felbontja vele a házassági szerződést. Mély tiszteletet vált ki dr. Grisákból csak azzal, hogy nem él vissza a szerződés adta lehetőségeivel.
+    d) Mivel birtokait nem kapta vissza, mérnökként dolgozik a Tisza-szabályozásnál. Hazaüzen Garanvölgyiék falujába, hogy készüljenek fel az árvízre, mert a gátak nem elég biztosak. Itt válik fontossá egy beszélgetés dr. Grisák és Bräuhäusel úr között még a regény elejéről, amiből kiderül, hogy nem az előírásoknak megfelelően építtették a gátat, a pénz egy részét zsebre tették. Pont ezt a részt igyekszik most Aladár helyrehozni. Ankerschmidt saját szemével akar meggyőződni a helyzetről, de amíg a gáton van, Mikucsek úr, akit valószínűleg valaki felbérelt erre, átszakítja a gátat egy feljebbi szakaszon. Aladár és Ankerschmidt ezért egy kis csónakon eveznek haza a falujukba, és út közben segítenek egy falunyi embernek megmenekülni a víztől. Garanvölgyiék hallgattak Aladár üzenetére, de Ankerschmidték nem, és az Ankerschmidt-kastély félig összedől az árvíz miatt, mivel hanyagul építették. Mire Aladárék hazaérnek, az embereket és az értékeket már átmenekítették Garanvölgyihez, és Ankerschmidték be is költöznek hozzájuk.
+    e) Erzsike és Aladár megismerkednek, és Aladár rájön, hogy Erzsike írta az őt kiszabadító folyamodást. Itt már nyilvánvaló, hogy egymásba szerettek, de Aladárnak erkölcsi problémája van a helyzettel. Viszont mikor Ankerschmidttől megtudja, hogy birtokait visszaszerezheti, már nem áll ellent a vonzalomnak, és eljegyzi Erzsikét.
+    f) Mikucsek urat megölik, amiért átszakította a gátat, Aladár és Ankerschmidt lovag tanúként szerepelnek az ügyben.
+
+    5.2.5. A regény cselekményszálainak ábrázolása Gantt-diagramon
+
+    A táblázat fejlécében található római számok a fejezetek számai, a színezett cellákban található betűjelek az adott cselekményszálnak az előző pontban a megfelelő betűvel jelölt részeit jelentik. Az V. fejezetnél lévő halványzöld d) arra a beszélgetésre utal dr. Grisák és Bräuhäusel úr között, aminek akkor még semmi jelentőségét nem látjuk, de a XIV. fejezetben fontossá válik.
+
+
+    I.
+    II.
+    III.
+    IV.
+    V.
+    VI.
+    VII.
+    VIII.
+    IX.
+    X.
+    XI.
+    XII.
+    XIII.
+    XIV.
+    XV.
+    XVI.
+    XVII.
+    XVIII.
+    XIX.
+    1. A két öreg
+    a)
+
+
+    b)
+    c)
+    d)
+
+
+
+
+
+
+    e)
+
+
+    f)
+
+
+    f)
+    2. Straff
+
+    a)
+    b)
+
+
+
+    c)
+    d)
+    e)
+
+    f)
+    f)
+
+
+
+
+
+    g)
+
+    3. Pajtayné
+
+
+    a)
+
+
+
+
+
+
+
+
+
+
+
+    b)
+
+    4. Aladár
+
+
+    d)
+
+    a)
+
+    b)
+    c)
+
+
+
+    d)
+    e)
+
+    f)
+
+
+
+
+    \chapter{Forrásjegyzék}
+
+    Jókai Mór (1895): Az új földesúr. Magyar Elektronikus könyvtár. Elérhető: http://mek.oszk.hu/00600/00693/html/index.htm. Hozzáférés ideje: 2014. 11. 28.
+    Balla István (2012): Arató: Hoffmannt kihagyták. Interjú Arató Lászlóval. fn.hir24.hu, 2012. 02. 28. Elérhető: http://fn.hir24.hu/nagyinterju/2012/02/28/hoffmannt-kihagytak-az-alaptantervbol/. Hozzáférés ideje: 2014. 11. 28.
+    Imre László (2004): Fried István: Öreg Jókai nem vén Jókai. Tiszatáj, 2004. szeptember, 55-59.
+    http://www.literatura.hu/irok/romantik/jokai.htm. Hozzáférés ideje: 2014. 11. 28.
+    http://www.konyv7.hu/magyar/egyeb-menupontok/blogok/a-szerk-blogja/unalmas-remekmuvek. Hozzáférés ideje: 2014. 11. 28.
+\end{document}
