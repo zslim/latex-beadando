@@ -6,7 +6,9 @@
 \usepackage{paralist}
 \usepackage{colortbl}
 \usepackage{xcolor}
-\newcolumntype{C}{>{\centering\arraybackslash}X}
+\usepackage{natbib}
+\setcitestyle{aysep={},citesep={,},open={},close={}}
+\setlength{\bibsep}{0pt}
 
 \begin{document}
 
@@ -649,7 +651,9 @@
     Az V. fejezetnél lévő halványzöld \ref{itm:a-kozos-baj}) arra a beszélgetésre utal dr. Grisák és Bräuhäusel úr között,
         aminek akkor még semmi jelentőségét nem látjuk, de a XIV. fejezetben fontossá válik.
 
-    \newgeometry{left=1cm}
+    \vspace*{18pt}
+
+    \hspace*{-2.5cm}
     \setlength\tabcolsep{2.3pt}
     \begin{tabular}{ |l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c| }
         \hline
@@ -675,16 +679,18 @@
         \cellcolor{green}\ref{itm:a-kozos-baj}) & \cellcolor{green}\ref{itm:Aladar-es-Erzsike}) & & \cellcolor{green}\ref{itm:per}) & &  \\
         \hline
     \end{tabular}
-    \restoregeometry
+    \hspace*{2.5cm}
 
-    \chapter{Forrásjegyzék}
+    \begin{thebibliography}{}
+        \bibitem[Jókai (1895)]{foldesur} Jókai Mór (1895): Az új földesúr. Magyar Elektronikus könyvtár.
+            Elérhető: \url{http://mek.oszk.hu/00600/00693/html/index.htm}. Hozzáférés ideje: \emitdate{c}{2014-11-28}.
+        \bibitem[Balla (2012)]{kihagytak} Balla István (2012): Arató: Hoffmannt kihagyták. Interjú Arató Lászlóval. fn.hir24.hu, \emitdate{c}{2012-02-28}
+            Elérhető: \url{http://fn.hir24.hu/nagyinterju/2012/02/28/hoffmannt-kihagytak-az-alaptantervbol/}. Hozzáférés ideje: \emitdate{c}{2014-11-28}.
+        \bibitem[Imre (2004)]{ven} Imre László (2004): Fried István: Öreg Jókai nem vén Jókai. Tiszatáj, 2004. szeptember, 55-59.
+        \bibitem[Ismeretlen (2014)]{jokai} \url{http://www.literatura.hu/irok/romantik/jokai.htm}. Hozzáférés ideje: \emitdate{c}{2014-11-28}.
+        \bibitem[Ismeretlen (2014)]{unalmas} \url{http://www.konyv7.hu/magyar/egyeb-menupontok/blogok/a-szerk-blogja/unalmas-remekmuvek}.
+            Hozzáférés ideje: \emitdate{c}{2014-11-28}.
+    \end{thebibliography}
 
-    Jókai Mór (1895): Az új földesúr. Magyar Elektronikus könyvtár.
-        Elérhető: \url{http://mek.oszk.hu/00600/00693/html/index.htm}. Hozzáférés ideje: 2014. 11. 28.
-    Balla István (2012): Arató: Hoffmannt kihagyták. Interjú Arató Lászlóval. fn.hir24.hu, 2012. 02. 28.
-        Elérhető: \url{http://fn.hir24.hu/nagyinterju/2012/02/28/hoffmannt-kihagytak-az-alaptantervbol/}. Hozzáférés ideje: 2014. 11. 28.
-    Imre László (2004): Fried István: Öreg Jókai nem vén Jókai. Tiszatáj, 2004. szeptember, 55-59.
-    \url{http://www.literatura.hu/irok/romantik/jokai.htm}. Hozzáférés ideje: 2014. 11. 28.
-    \url{http://www.konyv7.hu/magyar/egyeb-menupontok/blogok/a-szerk-blogja/unalmas-remekmuvek}. Hozzáférés ideje: 2014. 11. 28.
 
 \end{document}
