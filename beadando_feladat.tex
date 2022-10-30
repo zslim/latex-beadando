@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{thesis-ekf}
+\documentclass{thesis-ekf}
 \usepackage[T1]{fontenc}
 \PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
 \usepackage[magyar]{babel}
@@ -33,9 +33,9 @@
 
     \chapter{Bevezetés – a modellezésről}\label{ch:bevezetes--a-modellezesrol}
 
-    Jókai Mór a magyar irodalom egy igen megosztó alakja. 
+    Jókai Mór a magyar irodalom egy igen megosztó alakja.
     Tisztelői előszeretettel illetik ,,a nagy magyar mesemondó'' névvel, míg munkája sokak szerint élvezhetetlen.
-    Vannak, akik vitatják, hogy regényeinek van-e helye az általános- illetve a középiskolai kötelező olvasmányok 
+    Vannak, akik vitatják, hogy regényeinek van-e helye az általános- illetve a középiskolai kötelező olvasmányok
         között\footnote{Balla István (2012): Arató: Hoffmannt kihagyták. Interjú Arató Lászlóval.
             fn.hir24.hu, \emitdate{c}{2012-02-28}
             Elérhető: \url{http://fn.hir24.hu/nagyinterju/2012/02/28/hoffmannt-kihagytak-az-alaptantervbol/}.
@@ -43,12 +43,12 @@
         miközben a másik oldal szerint Jókai a klasszikus magyar irodalom olyan jelentőségű alakja, hogy semmiképp
         nem hagyható le a listáról.
 
-    Jókaival kapcsolatban az egyik leghangsúlyosabb kritika az, hogy régies nyelvezete és sok helyen megjelenő 
+    Jókaival kapcsolatban az egyik leghangsúlyosabb kritika az, hogy régies nyelvezete és sok helyen megjelenő
         terjengőssége miatt nehezen befogadható, unalmas\footnote{
             \url{http://www.konyv7.hu/magyar/egyeb-menupontok/blogok/a-szerk-blogja/unalmas-remekmuvek}
             Hozzáférés ideje: \emitdate{c}{2014-11-28}}.
     Ez azonban csak a felszín – az érdekes kérdések, természetesen, a regények elolvasása után kezdődnek.
-    Ezen a mélyebb szinten merül fel a másik általános bírálat Jókaival szemben, miszerint az általa leírt valóság csak 
+    Ezen a mélyebb szinten merül fel a másik általános bírálat Jókaival szemben, miszerint az általa leírt valóság csak
         illúzió\footnote{Imre László (2004): Fried István: Öreg Jókai nem vén Jókai. Tiszatáj, 2004. szeptember, 55-59.},
         jellemábrázolásai felszínesek, és történelmi regényeiben, bár a cselekményt valós események köré fűzi,
         azoktól elszakad, leírásai inkább mitologikusak, mint történelmiek\footnote{
@@ -100,18 +100,18 @@
 
 
     \chapter{A modell összetevői}\label{ch:a-modell-osszetevoi}
-    
+
     \section{A változók és kapcsolatuk}\label{sec:a-valtozok-es-kapcsolatuk}
 
-    Meglátásom szerint egy történelmi regénnyel leírt modell alkotóelemei három csoportba sorolhatók: 
+    Meglátásom szerint egy történelmi regénnyel leírt modell alkotóelemei három csoportba sorolhatók:
         események, személyek és világnézetek (vagy morál, erkölcs, értékrend, ahogy tetszik).
-    E három csoport egymáshoz való viszonya meghatározza az egész regényt. 
-    Az események kategóriája egyértelmű. 
-    A személyekhez az egyes szereplők céljait, motivációit, és ezekre irányuló döntéseit sorolom, 
+    E három csoport egymáshoz való viszonya meghatározza az egész regényt.
+    Az események kategóriája egyértelmű.
+    A személyekhez az egyes szereplők céljait, motivációit, és ezekre irányuló döntéseit sorolom,
         míg értékrendjük egy-egy külön változót alkot.
 
-    Jókai rendszerint rögzíti az erkölcsi kategóriába tartozó változókat: 
-        regényeire nem jellemző a jellemfejlődés ábrázolása, a szereplők ebből a szempontból statikusak. 
+    Jókai rendszerint rögzíti az erkölcsi kategóriába tartozó változókat:
+        regényeire nem jellemző a jellemfejlődés ábrázolása, a szereplők ebből a szempontból statikusak.
     Határozottan elkülönülnek a ,,jó'' és a ,,rossz'' személyiségek (ha van is köztes kategória, abba csak néhány
         jelentéktelenebb szereplő tartozik).
     Az, hogy egy szereplő ezek közül melyikbe tartozik, meghatározza, hogy céljai eléréséhez milyen eszközöket használ fel.
@@ -432,87 +432,189 @@
 
     \subsection{,,Jó'' szereplők}
 
-    Garanvölgyi Ádám
-    A regény főszereplője, a passzív ellenállás megtestesítője Ádám úr. A szabadságharc bukása, az új rendszer létrejötte és unokaöccsének elvesztése hatására fásult közönybe süllyedt, céljairól lemondott. Az iránta tanúsított jóindulat belőle is jóindulatot vált ki, míg a rosszindulat makacsságot és szarkazmust.
+    \paragraph{Garanvölgyi Ádám}
+    A regény főszereplője, a passzív ellenállás megtestesítője Ádám úr.
+    A szabadságharc bukása, az új rendszer létrejötte és unokaöccsének elvesztése hatására fásult közönybe süllyedt,
+        céljairól lemondott.
+    Az iránta tanúsított jóindulat belőle is jóindulatot vált ki, míg a rosszindulat makacsságot és szarkazmust.
 
-    Kampós uram
-    Garanvölgyi kasznárja. Kampós Ádám úr ellentéte: aktív ellenálló, tevékeny, sokat beszél, folyton jön-megy. Gazdájához feltétlenül lojális és ragaszkodó, az ő érdekeit szolgálja mindenek felett. Nem olyan okos, mint a körülötte élő uraságok (pl. Straff különösebb nehézség nélkül becsapja), de a saját társadalmi szintjén a legintelligensebbek közé tartozik. Kampós gyakorlatilag az ideális jószágigazgató. Az osztrákoknak rendre túljár az eszén, és közben remekül szórakozik.
+    \paragraph{Kampós uram}
+    Garanvölgyi kasznárja.
+    Kampós Ádám úr ellentéte: aktív ellenálló, tevékeny, sokat beszél, folyton jön-megy.
+    Gazdájához feltétlenül lojális és ragaszkodó, az ő érdekeit szolgálja mindenek felett.
+    Nem olyan okos, mint a körülötte élő uraságok (pl.
+    Straff különösebb nehézség nélkül becsapja), de a saját társadalmi szintjén a legintelligensebbek közé tartozik.
+    Kampós gyakorlatilag az ideális jószágigazgató.
+    Az osztrákoknak rendre túljár az eszén, és közben remekül szórakozik.
 
-    Ankerschmidt lovag
-    A regény másik főszereplője, nyugalmazott katonatiszt; osztrák, de mégis jó. Értékrendje korrekt és szimpatikus, és emellett nagyon szilárd. Jó kapcsolatban van Béccsel, de nem feltétlen kiszolgálója a rendszernek. Célja egy modern gazdaság létrehozása és működtetése az új birtokon. Hiányossága, hogy nem jó emberismerő, amit pl. Straff és Grisák is alaposan kihasznál. A regény végére elmagyarosodik.
+    \paragraph{Ankerschmidt lovag}
+    A regény másik főszereplője, nyugalmazott katonatiszt; osztrák, de mégis jó.
+    Értékrendje korrekt és szimpatikus, és emellett nagyon szilárd.
+    Jó kapcsolatban van Béccsel, de nem feltétlen kiszolgálója a rendszernek.
+    Célja egy modern gazdaság létrehozása és működtetése az új birtokon.
+    Hiányossága, hogy nem jó emberismerő, amit pl.
+    Straff és Grisák is alaposan kihasznál.
+    A regény végére elmagyarosodik.
 
-    Eliz (később Erzsike)
-    Ankerschmidt kisebbik lánya, a másik ,,jó osztrák''. Apjához hasonlóan karizmatikus egyéniség, vele ellentétben azonban jó emberismerő. Erkölcse teljesen egyezik apjáéval, viselkedése viszont kevésbé merev, nőiessége ebben nyilvánul meg. Célja egyrészt a család békéjének fenntartása, mikor erre szükség van, másrészt miután beleszeret Aladárba, az ő boldogulása. Mindkettőért kész komoly áldozatot vállalni. Eliz karaktere igazi romantikus hősnő, a regény végére még a neve is magyar lesz.
+    \paragraph{Eliz (később Erzsike)}
+    Ankerschmidt kisebbik lánya, a másik ,,jó osztrák''.
+    Apjához hasonlóan karizmatikus egyéniség, vele ellentétben azonban jó emberismerő.
+    Erkölcse teljesen egyezik apjáéval, viselkedése viszont kevésbé merev, nőiessége ebben nyilvánul meg.
+    Célja egyrészt a család békéjének fenntartása, mikor erre szükség van, másrészt miután beleszeret Aladárba, az ő boldogulása.
+    Mindkettőért kész komoly áldozatot vállalni.
+    Eliz karaktere igazi romantikus hősnő, a regény végére még a neve is magyar lesz.
 
-    Garanvölgyi Aladár
-    Garanvölgyi Ádám unokaöccse és fogadott fia. A történet elején státusfogoly Kufsteinben, még tíz év hátra van a fogságából. Talán még az eddigieknél is erősebben idealizált karakter, ami kapcsolatban lehet azzal, hogy Jókai, többi főszereplővel ellentétben, egy konkrét valós személyről mintázta6. Amíg a helyzete reménytelen, beéri kevéssel, de ahogy javulnak a kilátásai, új célokat tűz ki maga elé, és keményen dolgozik értük. Mindent tisztességesen csinál, a váratlan helyzeteket is mély nyugalommal kezeli, gyorsan és jól tájékozódik.
+    \paragraph{Garanvölgyi Aladár}
+    Garanvölgyi Ádám unokaöccse és fogadott fia.
+    A történet elején státusfogoly Kufsteinben, még tíz év hátra van a fogságából.
+    Talán még az eddigieknél is erősebben idealizált karakter, ami kapcsolatban lehet azzal, hogy Jókai,
+        többi főszereplővel ellentétben, egy konkrét valós személyről mintázta6. % TODO
+    Amíg a helyzete reménytelen, beéri kevéssel, de ahogy javulnak a kilátásai, új célokat tűz ki maga elé,
+        és keményen dolgozik értük.
+    Mindent tisztességesen csinál, a váratlan helyzeteket is mély nyugalommal kezeli, gyorsan és jól tájékozódik.
 
-    5.1.2. ,,Rossz'' szereplők
-    A rossz karakterek sokkal kevésbé kidolgozottak, mint a jók. Szerepük kimerül abban, hogy kihívást állítanak a jók elé, illetve időnként megnevettetnek minket. A személyiségükről csak annyi derül ki, amennyi e funkciók betöltéséhez szükséges.
+    \subsection{,,Rossz'' szereplők}
+    A rossz karakterek sokkal kevésbé kidolgozottak, mint a jók.
+    Szerepük kimerül abban, hogy kihívást állítanak a jók elé, illetve időnként megnevettetnek minket.
+    A személyiségükről csak annyi derül ki, amennyi e funkciók betöltéséhez szükséges.
 
-    Dr. Grisák
-    A korrupt bürokrata karakterét testesíti meg. Csak az motiválja, ha valamiből haszna van, tehát ha pénzre, vagy egy fontos pozícióban levő ember kegyére tesz szert. A regényben Ankerschmidten élősködik. Nem elég gátlástalan azonban ahhoz, hogy kifejezetten gonosz legyen.
+    \paragraph{Dr. Grisák}
+    A korrupt bürokrata karakterét testesíti meg.
+    Csak az motiválja, ha valamiből haszna van, tehát ha pénzre, vagy egy fontos pozícióban levő ember kegyére tesz szert.
+    A regényben Ankerschmidten élősködik.
+    Nem elég gátlástalan azonban ahhoz, hogy kifejezetten gonosz legyen.
 
-    Straff Péter
-    A regény legördögibb figurája: hazug, tisztességtelen, alattomos és gátlástalan; kihasznál mindenkit, akit csak tud. Neki is egyetlen célja, hogy minél több pénzhez jusson, és ennek érdekében akárkinek keresztbe tesz. Egyébként eredetileg a ,,cabinet noir'' munkatársa, azaz ő bontja fel és olvassa el a postára adott, gyanúsnak tűnő leveleket.
+    \paragraph{Straff Péter}
+    A regény legördögibb figurája: hazug, tisztességtelen, alattomos és gátlástalan; kihasznál mindenkit, akit csak tud.
+    Neki is egyetlen célja, hogy minél több pénzhez jusson, és ennek érdekében akárkinek keresztbe tesz.
+    Egyébként eredetileg a ,,cabinet noir'' munkatársa, azaz ő bontja fel és olvassa el a postára adott, gyanúsnak tűnő leveleket.
 
-    Pajtayné
-    Az öreg Garanvölgyi sógornője és Aladár menyasszonya, elosztrákosodott magyar. Legfőbb jellemvonása, hogy szívtelen – udvarlói éppúgy hidegen hagyják, mint egykori hazája sorsa. Csak a maga hasznát keresi. Egy ideig úgy tűnik, hogy ehhez elég okos, de Straffot például alábecsüli.
+    \paragraph{Pajtayné}
+    Az öreg Garanvölgyi sógornője és Aladár menyasszonya, elosztrákosodott magyar.
+    Legfőbb jellemvonása, hogy szívtelen – udvarlói éppúgy hidegen hagyják, mint egykori hazája sorsa.
+    Csak a maga hasznát keresi.
+    Egy ideig úgy tűnik, hogy ehhez elég okos, de Straffot például alábecsüli.
 
-    Bräuhäusel úr
-    Kerületi biztos, szintén egy korrupt hivatalnok. Butasága a regény egyik humorforrása.
+    \paragraph{Bräuhäusel úr}
+    Kerületi biztos, szintén egy korrupt hivatalnok.
+    Butasága a regény egyik humorforrása.
 
-    Mikucsek úr
-    Róla még azt sem tudjuk, hogy milyen hivatala van, de ő is a rendszer élősdije. Neki nem a butasága, hanem az ügyefogyottsága van kiemelve.
+    \paragraph{Mikucsek úr}
+    Róla még azt sem tudjuk, hogy milyen hivatala van, de ő is a rendszer élősdije.
+    Neki nem a butasága, hanem az ügyefogyottsága van kiemelve.
 
-    5.1.3. ,,A szerencsétlenek''
-    Ebbe a kategóriába azokat sorolom, akik ugyan nem rosszak vagy rosszindulatúak, de nem is szimpatikusak, és nem jönnek rá időben, hogy rosszul döntöttek. Ezek a szereplők önmagukban jelentéktelenek, az a legfontosabb funkciójuk, hogy alanyul szolgálnak a jók és a rosszak cselekedeteihez, viszonyának alakulásához.
+    \subsection{,,A szerencsétlenek''}
 
-    Hermine
-    Ankerschmidt nagyobbik lánya. Keveset tudunk róla, csak azt, hogy lelkiismeretes, nagyon szép, és hogy apjához hasonlóan rossz emberismerő.
+    Ebbe a kategóriába azokat sorolom, akik ugyan nem rosszak vagy rosszindulatúak, de nem is szimpatikusak,
+        és nem jönnek rá időben, hogy rosszul döntöttek.
+    Ezek a szereplők önmagukban jelentéktelenek, az a legfontosabb funkciójuk, hogy alanyul szolgálnak
+        a jók és a rosszak cselekedeteihez, viszonyának alakulásához.
 
-    Missz Natalie
-    Az Ankerschmidt-lányok nevelőnője. Elizt nem tudja kezelni, mivel vele ellentétben képtelen a felszín mögé látni. Korlátolt, fontoskodó nő, akivel Straff és Grisák is kedve szerint játszik.
+    \paragraph{Hermine}
+    Ankerschmidt nagyobbik lánya.
+    Keveset tudunk róla, csak azt, hogy lelkiismeretes, nagyon szép, és hogy apjához hasonlóan rossz emberismerő.
 
-    Maxenpfutsch Vendelin
-    Ankerschmidt jószágigazgatója. Kampóssal ellentétben nem ért eléggé a dolgához, viszont nagyképű. Mikor felgyorsulnak körülötte az események, nem tudja követni őket, és mindig abban bízik, akiben nem kéne.
+    \paragraph{Missz Natalie}
+    Az Ankerschmidt-lányok nevelőnője.
+    Elizt nem tudja kezelni, mivel vele ellentétben képtelen a felszín mögé látni.
+    Korlátolt, fontoskodó nő, akivel Straff és Grisák is kedve szerint játszik.
 
-    5.2. A regény cselekményszálai
+    \paragraph{Maxenpfutsch Vendelin}
+    Ankerschmidt jószágigazgatója.
+    Kampóssal ellentétben nem ért eléggé a dolgához, viszont nagyképű.
+    Mikor felgyorsulnak körülötte az események, nem tudja követni őket, és mindig abban bízik, akiben nem kéne.
 
-    A regény cselekményét négy szálra bontottam, az alapján, hogy melyik szereplő gyakorolja a legnagyobb befolyást az eseményekre. Egy szálon belül a történések időrendben vannak, de az előzmények sokszor másik cselekményszálban találhatók. Emiatt elsőre nehéz lehet rekonstruálni az egész regényt a leírásom alapján, de segítségül elkészítettem a függelék második pontjában található Gantt-diagramot, ami szerintem jól szemlélteti a cselekmény menetét.
+    \section{A regény cselekményszálai}
 
-    5.2.1. Ankerschmidt és Garanvölgyi
-    a) Ankerschmidt lovag földet vásárolt Pajtaynétól, az öreg Garanvölgyi közvetlen szomszédságában, és elkezd felépíteni rajta egy modern gazdaságot. A két öregúr először azért kerül kapcsolatba, mert Ankerschmidtnek útjában áll egy régi, lakatlan kastély, amit azonban Garanvölgyi nem enged lerombolni. A viszonyuk így feszülten indul.
-    b) A következő ponton Ankerschmidt személyesen viszi Garanvölgyihez Eliz levelét, hogy megtudja, mi áll benne. A két szomszéd viszonya megenyhül, de továbbra is távolságtartóak maradnak.
-    c) Közben nyomon követhetjük az Ankerschmidt-gazdaság helyzetét. A lovag hiába ölt bele sok pénzt, nem minden működik terv szerint az első évben, több dolog miatt is nevetség tárgya lesz. Kampós felajánlja a segítségét és a tanácsait Maxenpfutschnak, de az csak a saját kárán tanulja meg, hogy Kampósnak volt igaza. A szálnak ez a része a nagyképű tudományoskodást állítja szembe az igazi tudással és talpraesettséggel.
-    d) Ankerschmidt tudomást szerez Aladárról, és elkezd ügyködni a szabadulása érdekében. Megírat egy folyamodványt dr. Grisákkal, amit Pajtaynéval, mint Aladár menyasszonyával akar letisztáztatni. Pajtayné azonban talál rá ürügyet, hogy ezt visszautasítsa.
+    A regény cselekményét négy szálra bontottam, az alapján, hogy melyik szereplő gyakorolja a legnagyobb befolyást az eseményekre.
+    Egy szálon belül a történések időrendben vannak, de az előzmények sokszor másik cselekményszálban találhatók.
+    Emiatt elsőre nehéz lehet rekonstruálni az egész regényt a leírásom alapján, de segítségül elkészítettem
+        a függelék második pontjában található Gantt-diagramot, ami szerintem jól szemlélteti a cselekmény menetét.
+
+    \subsection{Ankerschmidt és Garanvölgyi}
+    a) Ankerschmidt lovag földet vásárolt Pajtaynétól, az öreg Garanvölgyi közvetlen szomszédságában,
+        és elkezd felépíteni rajta egy modern gazdaságot.
+A két öregúr először azért kerül kapcsolatba, mert Ankerschmidtnek útjában áll egy régi, lakatlan kastély, amit azonban Garanvölgyi nem enged lerombolni.
+A viszonyuk így feszülten indul.
+    b) A következő ponton Ankerschmidt személyesen viszi Garanvölgyihez Eliz levelét, hogy megtudja, mi áll benne.
+A két szomszéd viszonya megenyhül, de továbbra is távolságtartóak maradnak.
+    c) Közben nyomon követhetjük az Ankerschmidt-gazdaság helyzetét.
+A lovag hiába ölt bele sok pénzt, nem minden működik terv szerint az első évben, több dolog miatt is nevetség tárgya lesz.
+Kampós felajánlja a segítségét és a tanácsait Maxenpfutschnak, de az csak a saját kárán tanulja meg, hogy Kampósnak volt igaza.
+A szálnak ez a része a nagyképű tudományoskodást állítja szembe az igazi tudással és talpraesettséggel.
+    d) Ankerschmidt tudomást szerez Aladárról, és elkezd ügyködni a szabadulása érdekében.
+Megírat egy folyamodványt dr.
+Grisákkal, amit Pajtaynéval, mint Aladár menyasszonyával akar letisztáztatni.
+Pajtayné azonban talál rá ürügyet, hogy ezt visszautasítsa.
     e) Hermine halála után Ankerschmidt támogatást kap Garanvölgyiéktől egyrészt a részvétük kifejezése által, másrészt Ádám úr felajánlja neki, hogy arra a dombra építtesse az új családi sírboltot, amelyiken a Garanvölgyi családé is van.
-    f) Az árvíz és az eljegyzés után már igazi barátok lesznek. Ankerschmidt elkezd magyar földesúrként politizálni, és mikor Garanvölgyi végül feladja a passzív ellenállást és visszatér a közéletbe, Ankerschmidttel egymás oldalán harcolnak a magyar érdekeket képviselve.
+    f) Az árvíz és az eljegyzés után már igazi barátok lesznek.
+Ankerschmidt elkezd magyar földesúrként politizálni, és mikor Garanvölgyi végül feladja a passzív ellenállást és visszatér a közéletbe, Ankerschmidttel egymás oldalán harcolnak a magyar érdekeket képviselve.
 
-    5.2.2. Straff Péter ámokfutása
-    a) Kampós uram Garanvölgyi birtokán bújtatja Straffot, aki elhitette vele, hogy ő Petőfi Sándor. Garanvölgyi azonban átlát a szitán, és Kampós elkergeti Straffot.
-    b) Straff ekkor álnevet vált, és különböző hazugságokkal beférkőzik Ankerschmidtékhez, ahol végül zongoratanár lesz. Missz Natalie és Hermine odavannak érte, csak Eliz idegenkedik tőle. Levelet is ír Garanvölgyinek, amiben figyelmezteti, hogy Straff sok mindenről tud, amiből Ádám úrnak baja lehet.
-    c) Straff később kilesi Kampóst a romos kastélyban, jelentést tesz, és emiatt Bräuhäusel úr vezetésével vizsgáló bizottság érkezik, hogy házkutatást tartson. Ankerschmidt rögtön rájön, hogy Straff adta fel Garavölgyit, és elkergeti a házától.
-    d) Amíg azonban Ankerschmidt Bécsben, illetve Kufsteinben van Aladár ügyében, Straff Maxenpfutschot és missz Natalie-t kihasználva megszökteti és elveszi Hermine-t. Ankerschmidtet megviseli lányának szökése, és nagy lökést ad neki a magyarosodás felé. Magyar módra szakállt növeszt, Elizt pedig Erzsikének kezdi hívni.
-    e) A körülmények miatt és dr. Grisák ráhatására Maxenpfutsch és a missz is összeházasodnak. Straff azonban csak a pénzéért vette el Hermine-t, és mikor Ankerschmidt, Straff foglalkozása miatt, megtagadja Hermine örökségének kiadását, Straff rosszul kezd bánni a feleségével.
-    f) Végül Erzsike elintézi, hogy nővére hazamehessen, de Hermine akkor már nagyon beteg. A válás meggyógyíthatná, de Straff mindig több és több pénzt akar a válóper aláírásáért cserébe. Végül túl sokáig feszíti a húrt, és Hermine meghal.
-    g) Straff visszakerül korábbi állásába a cabinet noir-ba, és összekeveri Pajtayné leveleit (ld. lejjebb).
+    \subsection{Straff Péter ámokfutása}
+    a) Kampós uram Garanvölgyi birtokán bújtatja Straffot, aki elhitette vele, hogy ő Petőfi Sándor.
+Garanvölgyi azonban átlát a szitán, és Kampós elkergeti Straffot.
+    b) Straff ekkor álnevet vált, és különböző hazugságokkal beférkőzik Ankerschmidtékhez, ahol végül zongoratanár lesz.
+Missz Natalie és Hermine odavannak érte, csak Eliz idegenkedik tőle.
+Levelet is ír Garanvölgyinek, amiben figyelmezteti, hogy Straff sok mindenről tud, amiből Ádám úrnak baja lehet.
+    c) Straff később kilesi Kampóst a romos kastélyban, jelentést tesz, és emiatt Bräuhäusel úr vezetésével vizsgáló bizottság érkezik, hogy házkutatást tartson.
+Ankerschmidt rögtön rájön, hogy Straff adta fel Garavölgyit, és elkergeti a házától.
+    d) Amíg azonban Ankerschmidt Bécsben, illetve Kufsteinben van Aladár ügyében, Straff Maxenpfutschot és missz Natalie-t kihasználva megszökteti és elveszi Hermine-t.
+Ankerschmidtet megviseli lányának szökése, és nagy lökést ad neki a magyarosodás felé.
+Magyar módra szakállt növeszt, Elizt pedig Erzsikének kezdi hívni.
+    e) A körülmények miatt és dr.
+Grisák ráhatására Maxenpfutsch és a missz is összeházasodnak.
+Straff azonban csak a pénzéért vette el Hermine-t, és mikor Ankerschmidt, Straff foglalkozása miatt, megtagadja Hermine örökségének kiadását, Straff rosszul kezd bánni a feleségével.
+    f) Végül Erzsike elintézi, hogy nővére hazamehessen, de Hermine akkor már nagyon beteg.
+A válás meggyógyíthatná, de Straff mindig több és több pénzt akar a válóper aláírásáért cserébe.
+Végül túl sokáig feszíti a húrt, és Hermine meghal.
+    g) Straff visszakerül korábbi állásába a cabinet noir-ba, és összekeveri Pajtayné leveleit (ld.
+lejjebb).
 
-    5.2.3. Pajtayné játszmái
-    a) Pajtayné már az első fejezetben szóba kerül, ugyanis a földek, amiket eladott Ankerschmidtnek, valójában az öreg Garanvölgyi birtokához tartoztak. Pajtayné dr. Grisák és az új törvények segítségével sajátította ki és adta el őket. Itt megismerjük öt udvarlóját, akiket lenyűgöz azzal, hogy mindig annak mutatja magát, akit az adott úriember látni szeretne benne. Kiderül az is, hogy Straff Pajtayné megbízásából van Garanvölgyi közelében, abból a célból, hogy az öregúrra nézve terhelő dolgokat tudjon meg. Pajtayné ezeket készül felhasználni arra, hogy Aladár esetleges korábbi szabadulását megakadályozza, mivel a házassági szerződésükkel most Aladár járna jobban. (Grisák itt két tűz közé kerül, mert Ankerschmidt és Pajtayné is vele akarja elintéztetni Aladár szabadulását, illetve nem szabadulását.)
-    b) Aladár kiszabadulása után Bécsbe költözik, ahol azonban majdnem az egész vagyonát elveszti a tőzsdén. Azzal a szándékkal, hogy udvarlóival felfrissítse a kapcsolatot, Balatonfüredre utazik. De az udvarlóknak írt levelek Straffnál kötnek ki a cabinet noir-ban, aki az egyikben talál egy saját magát fenyegető célzást. Ezért bosszúból összekeveri Pajtayné leveleit, hogy mindegyik ahhoz kerüljön, akiről valami rosszat ír. Így Pajtayné egyszerre veszti el az összes udvarlóját. Végül éppen Straff felé fordulnak a szándékai, de ennek a szálnak a kimenetelét már nem tudjuk meg.
+    \subsection{Pajtayné játszmái}
+    a) Pajtayné már az első fejezetben szóba kerül, ugyanis a földek, amiket eladott Ankerschmidtnek, valójában az öreg Garanvölgyi birtokához tartoztak.
+Pajtayné dr.
+Grisák és az új törvények segítségével sajátította ki és adta el őket.
+Itt megismerjük öt udvarlóját, akiket lenyűgöz azzal, hogy mindig annak mutatja magát, akit az adott úriember látni szeretne benne.
+Kiderül az is, hogy Straff Pajtayné megbízásából van Garanvölgyi közelében, abból a célból, hogy az öregúrra nézve terhelő dolgokat tudjon meg.
+Pajtayné ezeket készül felhasználni arra, hogy Aladár esetleges korábbi szabadulását megakadályozza, mivel a házassági szerződésükkel most Aladár járna jobban.
+(Grisák itt két tűz közé kerül, mert Ankerschmidt és Pajtayné is vele akarja elintéztetni Aladár szabadulását, illetve nem szabadulását.)
+    b) Aladár kiszabadulása után Bécsbe költözik, ahol azonban majdnem az egész vagyonát elveszti a tőzsdén.
+Azzal a szándékkal, hogy udvarlóival felfrissítse a kapcsolatot, Balatonfüredre utazik.
+De az udvarlóknak írt levelek Straffnál kötnek ki a cabinet noir-ban, aki az egyikben talál egy saját magát fenyegető célzást.
+Ezért bosszúból összekeveri Pajtayné leveleit, hogy mindegyik ahhoz kerüljön, akiről valami rosszat ír.
+Így Pajtayné egyszerre veszti el az összes udvarlóját.
+Végül éppen Straff felé fordulnak a szándékai, de ennek a szálnak a kimenetelét már nem tudjuk meg.
 
-    5.2.4. Aladár
-    a) A régi kastély átkutatása miatt Eliz meglát egy képet Aladárról, és elolvassa Ádám úr Aladárhoz írt leveleit. Ennek hatására kérvényt ír Aladár szabadulásáért, de a levél persze megint Ankerschmidt kezébe kerül. Abban állapodnak meg, hogy Ankerschmidt kieszközöli Aladár szabadon engedését, de Eliz sosem találkozhat Aladárral, nehogy úgy tűnjön, mintha érdekből segített volna neki.
+    \subsection{Aladár}
+    a) A régi kastély átkutatása miatt Eliz meglát egy képet Aladárról, és elolvassa Ádám úr Aladárhoz írt leveleit.
+Ennek hatására kérvényt ír Aladár szabadulásáért, de a levél persze megint Ankerschmidt kezébe kerül.
+Abban állapodnak meg, hogy Ankerschmidt kieszközöli Aladár szabadon engedését, de Eliz sosem találkozhat Aladárral, nehogy úgy tűnjön, mintha érdekből segített volna neki.
     b) Ankerschmidt meglátogatja a börtönben Aladárt, és gorombáskodik vele, hogy elterelje magáról a gyanút.
-    c) Aladár, miután kiszabadul, hazamegy a nagybátyjához, és visszaadja a látogatást Ankerschmidtnek. Ezután felkeresi Pajtaynét, és felbontja vele a házassági szerződést. Mély tiszteletet vált ki dr. Grisákból csak azzal, hogy nem él vissza a szerződés adta lehetőségeivel.
-    d) Mivel birtokait nem kapta vissza, mérnökként dolgozik a Tisza-szabályozásnál. Hazaüzen Garanvölgyiék falujába, hogy készüljenek fel az árvízre, mert a gátak nem elég biztosak. Itt válik fontossá egy beszélgetés dr. Grisák és Bräuhäusel úr között még a regény elejéről, amiből kiderül, hogy nem az előírásoknak megfelelően építtették a gátat, a pénz egy részét zsebre tették. Pont ezt a részt igyekszik most Aladár helyrehozni. Ankerschmidt saját szemével akar meggyőződni a helyzetről, de amíg a gáton van, Mikucsek úr, akit valószínűleg valaki felbérelt erre, átszakítja a gátat egy feljebbi szakaszon. Aladár és Ankerschmidt ezért egy kis csónakon eveznek haza a falujukba, és út közben segítenek egy falunyi embernek megmenekülni a víztől. Garanvölgyiék hallgattak Aladár üzenetére, de Ankerschmidték nem, és az Ankerschmidt-kastély félig összedől az árvíz miatt, mivel hanyagul építették. Mire Aladárék hazaérnek, az embereket és az értékeket már átmenekítették Garanvölgyihez, és Ankerschmidték be is költöznek hozzájuk.
-    e) Erzsike és Aladár megismerkednek, és Aladár rájön, hogy Erzsike írta az őt kiszabadító folyamodást. Itt már nyilvánvaló, hogy egymásba szerettek, de Aladárnak erkölcsi problémája van a helyzettel. Viszont mikor Ankerschmidttől megtudja, hogy birtokait visszaszerezheti, már nem áll ellent a vonzalomnak, és eljegyzi Erzsikét.
+    c) Aladár, miután kiszabadul, hazamegy a nagybátyjához, és visszaadja a látogatást Ankerschmidtnek.
+Ezután felkeresi Pajtaynét, és felbontja vele a házassági szerződést.
+Mély tiszteletet vált ki dr.
+Grisákból csak azzal, hogy nem él vissza a szerződés adta lehetőségeivel.
+    d) Mivel birtokait nem kapta vissza, mérnökként dolgozik a Tisza-szabályozásnál.
+Hazaüzen Garanvölgyiék falujába, hogy készüljenek fel az árvízre, mert a gátak nem elég biztosak.
+Itt válik fontossá egy beszélgetés dr.
+Grisák és Bräuhäusel úr között még a regény elejéről, amiből kiderül, hogy nem az előírásoknak megfelelően építtették a gátat, a pénz egy részét zsebre tették.
+Pont ezt a részt igyekszik most Aladár helyrehozni.
+Ankerschmidt saját szemével akar meggyőződni a helyzetről, de amíg a gáton van, Mikucsek úr, akit valószínűleg valaki felbérelt erre, átszakítja a gátat egy feljebbi szakaszon.
+Aladár és Ankerschmidt ezért egy kis csónakon eveznek haza a falujukba, és út közben segítenek egy falunyi embernek megmenekülni a víztől.
+Garanvölgyiék hallgattak Aladár üzenetére, de Ankerschmidték nem, és az Ankerschmidt-kastély félig összedől az árvíz miatt, mivel hanyagul építették.
+Mire Aladárék hazaérnek, az embereket és az értékeket már átmenekítették Garanvölgyihez, és Ankerschmidték be is költöznek hozzájuk.
+    e) Erzsike és Aladár megismerkednek, és Aladár rájön, hogy Erzsike írta az őt kiszabadító folyamodást.
+Itt már nyilvánvaló, hogy egymásba szerettek, de Aladárnak erkölcsi problémája van a helyzettel.
+Viszont mikor Ankerschmidttől megtudja, hogy birtokait visszaszerezheti, már nem áll ellent a vonzalomnak, és eljegyzi Erzsikét.
     f) Mikucsek urat megölik, amiért átszakította a gátat, Aladár és Ankerschmidt lovag tanúként szerepelnek az ügyben.
 
-    5.2.5. A regény cselekményszálainak ábrázolása Gantt-diagramon
+    \subsection{A regény cselekményszálainak ábrázolása Gantt-diagramon}
 
-    A táblázat fejlécében található római számok a fejezetek számai, a színezett cellákban található betűjelek az adott cselekményszálnak az előző pontban a megfelelő betűvel jelölt részeit jelentik. Az V. fejezetnél lévő halványzöld d) arra a beszélgetésre utal dr. Grisák és Bräuhäusel úr között, aminek akkor még semmi jelentőségét nem látjuk, de a XIV. fejezetben fontossá válik.
+    A táblázat fejlécében található római számok a fejezetek számai, a színezett cellákban található betűjelek az adott cselekményszálnak az előző pontban a megfelelő betűvel jelölt részeit jelentik.
+Az V.
+fejezetnél lévő halványzöld d) arra a beszélgetésre utal dr.
+Grisák és Bräuhäusel úr között, aminek akkor még semmi jelentőségét nem látjuk, de a XIV.
+fejezetben fontossá válik.
 
 
     I.
