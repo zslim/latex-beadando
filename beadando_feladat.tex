@@ -1,14 +1,21 @@
 \documentclass{thesis-ekf}
+
 \usepackage[T1]{fontenc}
 \PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+
 \usepackage[magyar]{babel}
 \footnotestyle{rule=fourth}
+
 \usepackage{paralist}
 \usepackage{colortbl}
 \usepackage{xcolor}
-\usepackage{natbib}
-\setcitestyle{aysep={},citesep={,},open={},close={}}
-\setlength{\bibsep}{0pt}
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definicio}{Definíció}[chapter]
+
 
 \begin{document}
 
@@ -22,76 +29,7 @@
 
     \maketitle
 
-    \setcounter{tocdepth}{1}
     \tableofcontents
-
-    \chapter{Bevezetés – a modellezésről}
-
-    Jókai Mór a magyar irodalom egy igen megosztó alakja.
-    Tisztelői előszeretettel illetik ,,a nagy magyar mesemondó'' névvel, míg munkája sokak szerint élvezhetetlen.
-    Vannak, akik vitatják, hogy regényeinek van-e helye az általános- illetve a középiskolai kötelező olvasmányok
-        között\footnote{Balla István (2012): Arató: Hoffmannt kihagyták. Interjú Arató Lászlóval.
-            fn.hir24.hu, \emitdate{c}{2012-02-28}
-            Elérhető: \url{http://fn.hir24.hu/nagyinterju/2012/02/28/hoffmannt-kihagytak-az-alaptantervbol/}.
-            Hozzáférés ideje: \emitdate{c}{2014-11-28}},
-        miközben a másik oldal szerint Jókai a klasszikus magyar irodalom olyan jelentőségű alakja, hogy semmiképp
-        nem hagyható le a listáról.
-
-    Jókaival kapcsolatban az egyik leghangsúlyosabb kritika az, hogy régies nyelvezete és sok helyen megjelenő
-        terjengőssége miatt nehezen befogadható, unalmas\footnote{
-            \url{http://www.konyv7.hu/magyar/egyeb-menupontok/blogok/a-szerk-blogja/unalmas-remekmuvek}
-            Hozzáférés ideje: \emitdate{c}{2014-11-28}}.
-    Ez azonban csak a felszín – az érdekes kérdések, természetesen, a regények elolvasása után kezdődnek.
-    Ezen a mélyebb szinten merül fel a másik általános bírálat Jókaival szemben, miszerint az általa leírt valóság csak
-        illúzió\footnote{Imre László (2004): Fried István: Öreg Jókai nem vén Jókai. Tiszatáj, 2004.~szeptember, 55-59.},
-        jellemábrázolásai felszínesek, és történelmi regényeiben, bár a cselekményt valós események köré fűzi,
-        azoktól elszakad, leírásai inkább mitologikusak, mint történelmiek\footnote{
-            \url{http://www.literatura.hu/irok/romantik/jokai.htm}
-            Hozzáférés ideje: \emitdate{c}{2014-11-28}}.
-
-    Dolgozatomban ez utóbbi jelenséggel szeretnék foglalkozni, azonban nem teszem fel előre, hogy egyszerűsítéseket
-        alkalmazni hiba.
-    A közgazdaságtan igen nagy mértékben támaszkodik erre az eszközre, mikor modelleket épít, és azok segítségével
-        próbálja leírni a valóságot.
-    Hogy pontosan hogy egyszerűsítünk (mely elemeket hagyjuk el, illetve melyeket tartjuk meg), az attól függ,
-        hogy az adott helyzetből éppen mit szeretnénk kihangsúlyozni.
-    Döntenünk kell a szemléltetés részletességéről is: egy túl egyszerű modell használatát megnehezítheti a
-        pontatlansága, viszont ha túlbonyolítjuk, könnyen elveszhet a mondanivalója.
-    Tehát egy állapot vagy folyamat bemutatására e szempontok alapján többféle modell is építhető.
-
-    Véleményem szerint az irodalom is modelleket épít, méghozzá hasonló gondolatmenet alapján.
-    A párhuzam erőltetettnek tűnhet, hiszen a gazdaság összetettsége miatt egyszerűsítések nélkül csak annyira
-        bonyolultan tudnánk azt leírni, aminek már nem is lenne értelme – de miért ne lenne igaz ez a társadalomra is?
-    Az 1850-es évek Magyarországát Jókai ugyanúgy személyes érdekek, motivációk, döntések rendszerén keresztül írja le,
-        mint a közgazdászok a gazdasági rendszert.
-    A párhuzam ellen szólhat, hogy köztudottan még senkinek nem sikerült tökéletesen leírnia a gazdaság működését
-        (ami kvázi legitimálja a modellek alkalmazását), míg ez ,,az emberek'', a társadalom viszonylatában,
-        főleg irodalmi vonatkozásban, talán kevésbé egyértelmű.
-    Szerintem viszont teljesen egzakt leírás nem lehetséges, hiszen minden szerző sajátos, egyéni módon gondolkodik
-        a világról, amitől nem tudja teljesen függetleníteni magát.
-    Nem is kell, hiszen nem tudományos igényű művekről van szó, hanem szépirodalomról.
-    Innentől azonban megalapozottan tekinthetünk modellnek minden olyan szépirodalmi koncepciót, látásmódot,
-        amely azonosítható valós alapokkal rendelkezik.
-    Tehát például a történelmi regényeket.
-
-    Jókai Mór Az új földesúr című művét modellként elemezni azért is érdekes, mert a szerző, saját leírása szerint,
-        ,,egy regényében sem igyekezett a kort, melyben története~[\dots]~fejlődik, annyira híven ecsetelni,
-        mint >>Az új földesúr<<-ban''\footnote{Jókai Mór (1895): Az új földesúr. Utóhang. Magyar Elektronikus könyvtár.
-            Elérhető: \url{http://mek.oszk.hu/00600/00693/html/04.htm}.
-            Hozzáférés ideje: \emitdate{c}{2014-11-28}}.
-    Ennek ellenére a regény bővelkedik csak tisztán jó- és tisztán rosszindulatú szereplőkben, a magyar föld népe
-        minden bajból kiküzdi magát, a rossz pedig mindig elnyeri méltó büntetését;
-        ma egyikről sem gondoljuk, hogy a valóságban így van, vagy valaha így lett volna.
-    Jókai kijelentését inkább úgy értelmezem, hogy ebben a regényében szerette volna leginkább átadni,
-        hogy ő hogy élte meg azt a kort, amiben a mű játszódik.
-    (Ez evidenciának tűnhet, de szerintem fontos kiemelni a különbséget.)
-    És itt visszaértünk a modellépítés gondolatmenetéhez: a modellező számára fontos részletek kiemeléséhez
-        és a lényegtelenek elhagyásához.
-
-    Mindezek alapján Az új földesúr szerintem minden további nélkül tekinthető Jókai saját neoabszolutizmus-modelljének.
-    A következőkben sorra veszem a modell felépítését és működését, illetve megpróbálok következtetni arra,
-        hogy Jókai milyen szempontok alapján építhette azt.
-
 
     \chapter{A modell összetevői}\label{ch:a-modell-osszetevoi}
 
@@ -107,7 +45,8 @@
     Jókai rendszerint rögzíti az erkölcsi kategóriába tartozó változókat:
         regényeire nem jellemző a jellemfejlődés ábrázolása, a szereplők ebből a szempontból statikusak.
     Határozottan elkülönülnek a ,,jó'' és a ,,rossz'' személyiségek (ha van is köztes kategória, abba csak néhány
-        jelentéktelenebb szereplő tartozik).
+        jelentéktelenebb szereplő tartozik)\footnote{Ebben a dolgozatban meghatároztam egy köztes kategóriát,
+        amelyet a ,,szerencsétlenek'' csoportjának neveztem el}.
     Az, hogy egy szereplő ezek közül melyikbe tartozik, meghatározza, hogy céljai eléréséhez milyen eszközöket használ fel.
 
     A személyek és események viszonya már regényenként különbözik.
@@ -128,7 +67,8 @@
     Például lehet az egy összefüggés, hogy ahol két jó találkozik, ott valami jó fog történni;
         vagy az, hogy ha egy jó és egy rossz kerül kapcsolatba, akkor a rossz végül alulmarad.
     (Ez két végletesen leegyszerűsített példa, csak a szemléltetés kedvéért hoztam fel őket.)
-    Az új földesúr modelljének összefüggéseit a változók leírása után vizsgálom.
+    Az új földesúr modelljének összefüggéseit a változók leírása után -- \aref{ch:a-modell-osszefuggesei}.~fejezetben,
+        \apageref{ch:a-modell-osszefuggesei}.~oldalon kezdődően -- vizsgálom.
 
     A modell változóinak részletezését a személyekkel kezdem, értékrendjük szerint csoportosítva őket.
 
@@ -136,19 +76,21 @@
     \section{Az új földesúr szereplői}\label{sec:az-uj-foldesur-szereploi}
 
     A regény szereplői egyrészt jók vagy rosszak, illetve szükségét láttam egy köztes kategóriának is.
-    Másrészt el lehet különíteni a szereplőket aszerint is, hogy osztrákok vagy magyarok.
-    (Ez utóbbi csoportosítás nem teljesen pontos, de szemléletes;
-        Ankerschmidt lovag nagyrészt cseh származású házanépét az osztrákokhoz sorolom.)
-    Nem meglepő módon a magyarok általában jók, és az osztrákok általában rosszak, de vannak kivételek.
+    Másrészt el lehet különíteni a szereplőket aszerint is, hogy osztrákok vagy magyarok\footnote{Ez a csoportosítás
+        nem teljesen pontos, de szemléletes;~Ankerschmidt lovag nagyrészt cseh származású házanépét az osztrákokhoz sorolom.}.
+    Nem meglepő módon a magyarok általában jók, és az osztrákok általában rosszak, de vannak kivételek\footnote{
+        A kivételek a regény végére feloldódnak. Természetesen nem a jók válnak rosszakká, vagy fordítva,
+        hanem a jó osztrákok (pl.~Ankerschmidt és Eliz) magyarrá válnak, míg a rossz magyarok (pl.~Pajtayné) elosztrákosodnak.}.
 
-    A szereplőkről részletesebb leírás található a függelékben, ebben a pontban csak felsorolom őket, mint a modell változóit.
+    A szereplőkről részletesebb leírás található a függelékben (\ref{ch:fuggelek}.~fejezet),
+        ebben a pontban csak felsorolom őket, mint a modell változóit.
 
     \subsection{,,Jó'' szereplők}
 
     A jók idealizált karakterek.
     Esetleg furcsa szokásuk, bogaruk lehet, de azok kezelhetők, megszokhatók, más rossz tulajdonáguk pedig nincs.
-    Céljaik érthetőek és befogadhatóak, elérésükért tisztességesen küzdenek
-        (ez a tisztesség időnként megengedi a törvények áthágását, máskor viszont törvényben megengedett dolgot tilt).
+    Céljaik érthetőek és befogadhatóak, elérésükért tisztességesen küzdenek -- ez a tisztesség időnként megengedi
+        a törvények áthágását, máskor viszont törvényben megengedett dolgot tilt.
 
     A következők tartoznak ide:
 
@@ -257,8 +199,10 @@
 
     \section{Két jó karakter találkozása}\label{sec:ket-jo-karakter-talalkozasa}
 
-    Jókai legtöbb regényéhez hasonlóan Az új földesúrban is teljesül az a szabály,
-        hogy ha két jó szereplő találkozik, akkor abból valami jó dolog következik.
+    Jókai legtöbb regényéhez hasonlóan Az új földesúrban is teljesül a következő szabály.
+    \begin{definicio}\label{def:ket-jo}
+        Ha két jó szereplő találkozik, akkor abból valami jó dolog következik.
+    \end{definicio}
     Egyrészt jó kapcsolat alakul ki köztük (barátok lesznek, vagy éppen egymásba szeretnek),
         másrészt amit együtt csinálnak, az is jól sikerül.
 
@@ -273,8 +217,10 @@
 
     \section{Egy jó és egy rossz karakter találkozása}\label{sec:egy-jo-es-egy-rossz-karakter-talalkozasa}
 
-    Szintén jellegzetes Jókai-összefüggés, ami Az új földesúrra is jellemző, hogy egy rossz karakter
-        sok fájdalmat és viszontagságot okozhat egy jónak, de végül saját csapdájába esik, és így a jó kerekedik felül.
+    Szintén jellegzetes Jókai-összefüggés, a következő állítás, ami Az új földesúrra is jellemző.
+    \begin{definicio}\label{def:jo-rossz}
+        Egy rossz karakter sok fájdalmat és viszontagságot okozhat egy jónak, de végül saját csapdájába esik, és így a jó kerekedik felül.
+    \end{definicio}
     Hogy egy ilyen viszony mennyire jelent komoly kihívást a jó szereplőnek, az a két érintett fél szellemi képességeitől,
         intelligenciájától függ.
     Minél okosabb a rossz karakter, annál nagyobb bajt tud keverni, illetve minél okosabb a jó,
@@ -285,7 +231,10 @@
     Ennek megfelelően az általa okozott problémák lassan jelentkeznek, és viszonylag könnyen kezelhetőek.
     A történet végére Ankerschmidt rájön, hogy Grisák nem jó ember, akinek így valószínűleg elvész az egyik
         legjobban fizető ügyfele.
-    Grisákkal ellentétben azonban Straff kifejezetten okos, ennek megfelelően a tettei következményei is komolyabbak
+    \begin{definicio}\label{def:Straff-Grisak}
+        Grisákkal ellentétben azonban Straff kifejezetten okos.
+    \end{definicio}
+    Ennek megfelelően a tettei következményei is komolyabbak
         (pl.~Hermine halála is hozzá köthető).
     Célját (a meggazdagodást) azonban nem sikerül elérnie, tehát alulmarad.
 
@@ -317,114 +266,13 @@
         míg a ,,szerencsétlen'' rosszul jár.
     Ez történik például Straff és Hermine, illetve Straff és Maxenpfutsch esetében.
 
-    \chapter{A modell használata és értékelése}
-
-    \section{Becslés a modell segítségével}
-
-    A közgazdaságtanban nem csak azért építünk modelleket, hogy állapotokat és folyamatokat írjunk le, hanem azért is,
-        hogy következtetéseket tudjunk levonni olyan helyzetekről, amikre nincs megfigyelésünk.
-    Erre egy irodalmi modell is alkalmas.
-    Itt természetesen nem időbeli előrejelzésre kell gondolni, hanem pl.~azt tudjuk megmondani a modell segítségével,
-        hogy milyen irányt vettek volna az események, ha két olyan szereplő találkozik, akik a regényben nem találkoztak.
-
-    A jó szereplők között minden lehetséges találkozás megvalósult a történet során, vannak viszont olyan jó‑rossz párok,
-        akik izgalmasan alakíthatták volna a történetet.
-    Ilyen például az Aladár-Straff páros.
-    Ha útjaik keresztezik egymást, egész biztos, hogy a helyzetből Aladár került volna ki győztesen,
-        az azonban már nem egyértelmű, hogy milyen áron.
-    Ők a regény két legokosabb szereplője, de azt nem tudjuk, hogy kettejük közül ki az intelligensebb,
-        ezért ennél pontosabb becslést nem tudunk adni.
-    Egy másik érdekes páros Eliz és Pajtayné, akik szintén nagyjából egyenrangúnak tűnnek.
-    Biztosan az ő esetükben is csak azt lehet állítani, hogy Eliz maradna felül, de azt tippelem, hogy eleinte még
-        Pajtayné állna nyerésre.
-
-    Talán kevésbé izgalmas, de szintén a modell segítségével megválaszolható kérdés, hogy mi lett volna,
-        ha Aladár találkozik a misszel, Maxenpfutsch úrral, vagy Hermine-nel.
-    A~\ref{sec_a-szerencsetlenek''}.~összefüggésnek megfelelően azt tartom valószínűnek, hogy nem értenék meg,
-        esetleg nem is érdekelnék egymást.
-    Talán Hermine kivétel lehet ez alól, őt ugyanis nem sok választja el a jóktól.
-
-    \section{A modell értékelése}
-
-    A modell felépítésének áttekintése után érdemes megvizsgálni, hogy Jókai milyen egyszerűsítéseket alkalmazott.
-    Ebből ugyanis, mint már írtam, kiderül, hogy mit tartott lényegesnek, és mit elhagyhatónak.
-
-    A legfontosabb, Jókaira általánosan jellemző egyszerűsítés a valósághoz képest az erkölcsi kategóriák számának
-        drasztikus lecsökkentése (kettőre, legfeljebb háromra).
-    Eszerint lehetséges, hogy Jókai nem tartotta fontosnak, vagy megörökítésre alkalmasnak az ember belső küzdelmeit,
-        vagy a nehezen megítélhető személyiségeket.
-    Egy másik nagyon hangsúlyos egyszerűsítés az, hogy Jókai egész egyszerűen nem ábrázol jellemfejlődést.
-    Bár történetei éveken keresztül folynak le, a szereplők tökéletesen ugyanolyanok a kezdet és a befejezés pillanatában.
-    Ebből arra következtetek, hogy a szerző számára a külső, emberek közötti események nagyobb jelentőséggel bírtak,
-        esetleg könnyebben tudta ezeket leírni, mint egy személyiség változását.
-    Valamivel kisebb jelentőségű egyszerűsítés, hogy a rossz szereplőket csak annyira dolgozta ki,
-        amennyire a jók szemszögéből ez szükséges volt.
-    A rosszaknak csak azokról a céljaikról tudunk, amiket a jókkal konfrontálódva akarnak elérni, és csak azokról
-        a tulajdonságaikról, amik problémát jelenthetnek.
-
-    Az új földesúrban használt összefüggések szintén elég egyszerűek.
-    Csak az adott szereplők erkölcsi hovatartozása és esetleg az intelligenciája számít, semmi más.
-    (Nem veszi figyelembe a múltjukat, a kapcsolataikat, pillanatnyi állapotukat, képzettségüket, stb.)
-    Az eddigiekkel ellentétben azonban Jókainak nem szokása az eseményeket leegyszerűsítve ábrázolni.
-    Éppen ellenkezőleg, szívesen időz olyan részleteken, amik szemléletesebbé vagy viccesebbé tehetik a leírást.
-    Ez alapján az a benyomásom, hogy célja a cselekmény minél érzékletesebb átadása volt,
-        a személyek pontos ábrázolását ennek alárendelte, jóval kevésbé tartotta fontosnak.
-
-    Az eddigi, általánosabb megállapítások után rátérek arra, hogy Jókai milyen egyszerűsítéseket alkalmazott
-        a neoabszolutizmus leírásánál.
-    Ezek közül a legfeltűnőbb a magyar – jó, osztrák – rossz párhuzam.
-    Bár a történet elején vannak rossz magyarok és jó osztrákok, a végére ez az anomália is megszűnik.
-    (Természetesen nem a jók válnak rosszakká, vagy fordítva, hanem a jó osztrákok magyarrá válnak,
-        a rossz magyarok pedig gyakorlatilag osztrákká.)
-    Ez arra enged következtetni, hogy Jókai a neoabszolutista irányítás és az irányítottak konfliktusát
-        ekvivalensnek látta az osztrákok és a magyarok harcával.
-    Ezt erősíti, hogy szívesen ábrázolja a magyarokat talpraesettnek, találékonynak, ügyesnek,
-        míg az osztrákokat ostobának, szerencsétlenkedőnek és merevnek.
-    A neoabszolutizmus alapját jelentő bürokrácia Jókai leírása szerint nem hatékony, és a nevetségességig
-        ostobán működik, időnként igen káros is lehet, elvileg megkerülhetetlen, mégis könnyű kijátszani.
-    Mind az aktív, mind a passzív ellenállást tiszteletre méltó erénynek tekinti, bár csak egy-két példán mutatja be őket.
-
-    Fontos hangsúly a történetben a régi és az új szembeállítása is.
-    A régi épület, újságok, eszme, tapasztalat, szokások az osztrákok szemében gyanúsak, időnként tiltják is őket,
-        de a magyar mégis ezekhez ragaszkodik, és jól teszi.
-    Ezzel szemben az új kastély, a technológia, a tőzsde, és az egész új rendszer hamis, rosszul működik,
-        és előbb-utóbb úgyis összedől, megbukik.
-    Az osztrákok persze ragaszkodnak hozzájuk, és csak saját hibájukból képesek tanulni.
-    A magyarokra erőltetett idegen hatalom ellenére azonban még mindig érvényesek azok az alapvető igazságok,
-        melyek szerint az igaz szívek egymásra találnak, a jók megkapják méltó jutalmukat, a rosszak pedig büntetésüket.
-    Ezek nyújtanak biztos pontot a nehéz időkben.
-
-    A modell alapján tehát úgy tűnik, hogy Jókai a neoabszolutizmust valószínűleg egy nehezen működő, igazságtalan,
-        erőszakos rendszernek látta, amit az osztrákok kényszerítettek a magyarokra.
-    Lehetségesnek tartotta azonban ellenállni a kényszernek, sőt azokra nézett fel, akik ezt tették.
-    Mindezek megfelelnek a modelltől független tudásunknak Jókai Mór nézeteit illetően.
-
-    \chapter{Összefoglalás}
-
-    Dolgozatom elején kifejtettem, hogy egy történelmi regény tekinthető olyan modellnek, ami a szerzője által
-        fontosnak talált részletek kiemelésével mutatja be az adott történelmi helyzetet.
-    Jókai Mór Az új földesúr című regénye emiatt tekinthető egy, a neoabszolutizmust leíró modellnek.
-    A változók közül exogénnek tekintem a személyeket és erkölcsi hovatartozásukat, míg az események endogén változók.
-    A történet szereplőinek céljait, motivációit és döntéseit veszem figyelembe.
-    Erkölcsileg három kategóriát definiáltam: a jókat, a rosszakat és a ,,szerencsétleneket''.
-    Az eseményeket négy fő cselekményszálra bontottam.
-
-    A modell alapösszefüggései a következők.
-    Két jó karakter találkozásából jó kapcsolat és eredményes munka származik.
-    Ha egy jó és egy rossz szereplő akad össze, abból a jó félnek baja lehet, de végül legyőzi a rosszat.
-    Két rossz karakter találkozása először jónak tűnhet, de később egymás kölcsönös gáncsolásához vezet.
-
-    Megmutattam, hogy a modell hogyan használható becslésre.
-    Végül pedig megvizsgáltam, hogy a modell felépítésénél Jókai milyen egyszerűsítéseket alkalmazott a valósághoz képest,
-        és megpróbáltam arra következtetni, hogy miért épp ezeket használta.
-    Arra jutottam, hogy a cselekmények pontos leírását fontosabbnak tartja a személyábrázolásnál,
-        illetve hogy a neoabszolutizmust a magyarok és az osztrákok küzdelmeként élte meg.
-
-    \chapter{Függelék}
+    \chapter{Függelék}\label{ch:fuggelek}
 
     \section{A regény szereplői}
 
     \subsection{,,Jó'' szereplők}
+
+    Ebben a részben azokat a szereplőket sorolom fel, akikre \aref{def:ket-jo}.~definíció vonatkozik.
 
     \paragraph{Garanvölgyi Ádám}
     A regény főszereplője, a passzív ellenállás megtestesítője Ádám úr.
@@ -525,7 +373,7 @@
     A regény cselekményét négy szálra bontottam, az alapján, hogy melyik szereplő gyakorolja a legnagyobb befolyást az eseményekre.
     Egy szálon belül a történések időrendben vannak, de az előzmények sokszor másik cselekményszálban találhatók.
     Emiatt elsőre nehéz lehet rekonstruálni az egész regényt a leírásom alapján, de segítségül elkészítettem
-        a függelék második pontjában található Gantt-diagramot, ami szerintem jól szemlélteti a cselekmény menetét.
+        \aref{subsec:Gantt}.~pontban található Gantt-diagramot, ami szerintem jól szemlélteti a cselekmény menetét.
 
     \subsection{Ankerschmidt és Garanvölgyi}
 
@@ -632,7 +480,7 @@
         \item\label{itm:per} Mikucsek urat megölik, amiért átszakította a gátat, Aladár és Ankerschmidt lovag tanúként szerepelnek az ügyben.
 \end{enumerate}
 
-    \subsection{A regény cselekményszálainak ábrázolása Gantt-diagramon}
+    \subsection{A regény cselekményszálainak ábrázolása Gantt-diagramon}\label{subsec:Gantt}
 
     A táblázat fejlécében található római számok a fejezetek számai, a színezett cellákban található betűjelek az
         adott cselekményszálnak az előző pontban a megfelelő betűvel jelölt részeit jelentik.
