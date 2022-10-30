@@ -4,6 +4,9 @@
 \usepackage[magyar]{babel}
 \footnotestyle{rule=fourth}
 \usepackage{paralist}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
 \begin{document}
 
     \title{Jókai Mór neoabszolutizmus-modellje\\Az új földesúr című regénye alapján}
@@ -645,8 +648,9 @@
     Az V. fejezetnél lévő halványzöld d) arra a beszélgetésre utal dr. Grisák és Bräuhäusel úr között,
         aminek akkor még semmi jelentőségét nem látjuk, de a XIV. fejezetben fontossá válik.
 
-    \newgeometry{left=0.5cm}
-    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+    \newgeometry{left=1cm}
+    \setlength\tabcolsep{2.3pt}
+    \begin{tabular}{ |l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c| }
         \hline
         & \small{I.} & \small{II.} & \small{III.} & \small{IV.} & \small{V.} & \small{VI.} & \small{VII.} & \small{VIII.}
         & \small{IX.} & \small{X.} & \small{XI.} & \small{XII.} & \small{XIII.} & \small{XIV.} & \small{XV.} & \small{XVI.}
@@ -661,9 +665,8 @@
         3. Pajtayné & & & & & & \ref{itm:Corinna-udvarlok}) & & & & & & & & & & & & \ref{itm:Corinna-Bfured}) & \\
         \hline
         4. Aladár & & & & & \ref{itm:a-kozos-baj}) & & \ref{itm:Eliz-folyamodvany}) & & \ref{itm:varborton}) & \ref{itm:Aladar-hazaer}) &
-         & & & \ref{itm:a-kozos-baj}) & \ref{itm:Aladar-es-Erzsike}) & & \ref{itm:per}) & & & \\
+         & & & \ref{itm:a-kozos-baj}) & \ref{itm:Aladar-es-Erzsike}) & & \ref{itm:per}) & &  \\
         \hline
-        % TODO: nem fér ki a frikin táblázat
     \end{tabular}
     \restoregeometry
 
@@ -674,4 +677,5 @@
     Imre László (2004): Fried István: Öreg Jókai nem vén Jókai. Tiszatáj, 2004. szeptember, 55-59.
     http://www.literatura.hu/irok/romantik/jokai.htm. Hozzáférés ideje: 2014. 11. 28.
     http://www.konyv7.hu/magyar/egyeb-menupontok/blogok/a-szerk-blogja/unalmas-remekmuvek. Hozzáférés ideje: 2014. 11. 28.
+
 \end{document}
