@@ -4,7 +4,8 @@
 \usepackage[magyar]{babel}
 \footnotestyle{rule=fourth}
 \usepackage{paralist}
-\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{xcolor}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 
 \begin{document}
@@ -645,7 +646,7 @@
 
     A táblázat fejlécében található római számok a fejezetek számai, a színezett cellákban található betűjelek az
         adott cselekményszálnak az előző pontban a megfelelő betűvel jelölt részeit jelentik.
-    Az V. fejezetnél lévő halványzöld d) arra a beszélgetésre utal dr. Grisák és Bräuhäusel úr között,
+    Az V. fejezetnél lévő halványzöld \ref{itm:a-kozos-baj}) arra a beszélgetésre utal dr. Grisák és Bräuhäusel úr között,
         aminek akkor még semmi jelentőségét nem látjuk, de a XIV. fejezetben fontossá válik.
 
     \newgeometry{left=1cm}
@@ -656,26 +657,34 @@
         & \small{IX.} & \small{X.} & \small{XI.} & \small{XII.} & \small{XIII.} & \small{XIV.} & \small{XV.} & \small{XVI.}
         & \small{XVII.} & \small{XVIII.} & \small{XIX.} \\
         \hline
-        1. A két öreg & \ref{itm:bekoltoznek}) & & & \ref{itm:Eliz-levele}) & \ref{itm:gazdasag}) & \ref{itm:Aladarert})
-        & & & & & & & \ref{itm:sirbolt}) & & & \ref{itm:politika}) & & & \ref{itm:politika}) \\
+        1. A két öreg & \cellcolor{yellow}\ref{itm:bekoltoznek}) & & & \cellcolor{yellow}\ref{itm:Eliz-levele}) &
+        \cellcolor{yellow}\ref{itm:gazdasag}) & \cellcolor{yellow}\ref{itm:Aladarert})
+        & & & & & & & \cellcolor{yellow}\ref{itm:sirbolt}) & & & \cellcolor{yellow}\ref{itm:politika}) & & &
+        \cellcolor{yellow}\ref{itm:politika}) \\
         \hline
-        2. Straff & & \ref{itm:Petofi}) & \ref{itm:Bogumil}) & & & & \ref{itm:hazkutatas}) & \ref{itm:Hermine-szokese}) &
-        \ref{itm:nincs-hozomany}) & & \ref{itm:Archimedeszi-csavar}) & \ref{itm:Archimedeszi-csavar}) & & & & & & \ref{itm:cabinet-noir}) & \\
+        2. Straff & & \cellcolor{red}\ref{itm:Petofi}) & \cellcolor{red}\ref{itm:Bogumil}) & & & &
+        \cellcolor{red}\ref{itm:hazkutatas}) & \cellcolor{red}\ref{itm:Hermine-szokese}) &
+        \cellcolor{red}\ref{itm:nincs-hozomany}) & & \cellcolor{red}\ref{itm:Archimedeszi-csavar}) &
+        \cellcolor{red}\ref{itm:Archimedeszi-csavar}) & & & & & & \cellcolor{red}\ref{itm:cabinet-noir}) & \\
         \hline
-        3. Pajtayné & & & & & & \ref{itm:Corinna-udvarlok}) & & & & & & & & & & & & \ref{itm:Corinna-Bfured}) & \\
+        3. Pajtayné & & & & & & \cellcolor{cyan}\ref{itm:Corinna-udvarlok}) & & & & & & & & & & & &
+        \cellcolor{cyan}\ref{itm:Corinna-Bfured}) & \\
         \hline
-        4. Aladár & & & & & \ref{itm:a-kozos-baj}) & & \ref{itm:Eliz-folyamodvany}) & & \ref{itm:varborton}) & \ref{itm:Aladar-hazaer}) &
-         & & & \ref{itm:a-kozos-baj}) & \ref{itm:Aladar-es-Erzsike}) & & \ref{itm:per}) & &  \\
+        4. Aladár & & & & & \cellcolor{lime}\ref{itm:a-kozos-baj}) & & \cellcolor{green}\ref{itm:Eliz-folyamodvany}) & &
+        \cellcolor{green}\ref{itm:varborton}) & \cellcolor{green}\ref{itm:Aladar-hazaer}) & & & &
+        \cellcolor{green}\ref{itm:a-kozos-baj}) & \cellcolor{green}\ref{itm:Aladar-es-Erzsike}) & & \cellcolor{green}\ref{itm:per}) & &  \\
         \hline
     \end{tabular}
     \restoregeometry
 
     \chapter{Forrásjegyzék}
 
-    Jókai Mór (1895): Az új földesúr. Magyar Elektronikus könyvtár. Elérhető: http://mek.oszk.hu/00600/00693/html/index.htm. Hozzáférés ideje: 2014. 11. 28.
-    Balla István (2012): Arató: Hoffmannt kihagyták. Interjú Arató Lászlóval. fn.hir24.hu, 2012. 02. 28. Elérhető: http://fn.hir24.hu/nagyinterju/2012/02/28/hoffmannt-kihagytak-az-alaptantervbol/. Hozzáférés ideje: 2014. 11. 28.
+    Jókai Mór (1895): Az új földesúr. Magyar Elektronikus könyvtár.
+        Elérhető: \url{http://mek.oszk.hu/00600/00693/html/index.htm}. Hozzáférés ideje: 2014. 11. 28.
+    Balla István (2012): Arató: Hoffmannt kihagyták. Interjú Arató Lászlóval. fn.hir24.hu, 2012. 02. 28.
+        Elérhető: \url{http://fn.hir24.hu/nagyinterju/2012/02/28/hoffmannt-kihagytak-az-alaptantervbol/}. Hozzáférés ideje: 2014. 11. 28.
     Imre László (2004): Fried István: Öreg Jókai nem vén Jókai. Tiszatáj, 2004. szeptember, 55-59.
-    http://www.literatura.hu/irok/romantik/jokai.htm. Hozzáférés ideje: 2014. 11. 28.
-    http://www.konyv7.hu/magyar/egyeb-menupontok/blogok/a-szerk-blogja/unalmas-remekmuvek. Hozzáférés ideje: 2014. 11. 28.
+    \url{http://www.literatura.hu/irok/romantik/jokai.htm}. Hozzáférés ideje: 2014. 11. 28.
+    \url{http://www.konyv7.hu/magyar/egyeb-menupontok/blogok/a-szerk-blogja/unalmas-remekmuvek}. Hozzáférés ideje: 2014. 11. 28.
 
 \end{document}
