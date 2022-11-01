@@ -21,6 +21,8 @@
 
 \DeclareMathOperator{\arctg}{arctg}
 
+\usepackage{listings}
+
 \begin{document}
 
     \title{Jókai Mór neoabszolutizmus-modellje\\Az új földesúr című regénye alapján}
@@ -306,7 +308,7 @@
     És végül, Corinna játszadozik Grisákkal, de Grisák a történet végén minden együtt töltött percet
         kiszámláz neki ügyvédi konzultációként.
 
-    \section{,,A szerencsétlenek''}\label{sec_a-szerencsetlenek''}
+    \section{,,A szerencsétlenek''}
 
     Az előbb kifejtett három összefüggés alkotja a modell magját.
     Jókai azonban árnyalja a képet (javítja a modell pontosságát) azzal, hogy a se nem jó, se nem rossz karakterekre is
@@ -317,6 +319,11 @@
     Ha egy ,,szerencsétlen'' egy rossz karakterrel találkozik, akkor viszont a rossz jól,
         míg a ,,szerencsétlen'' rosszul jár.
     Ez történik például Straff és Hermine, illetve Straff és Maxenpfutsch esetében.
+
+    Az alább olyan kódrészletet adok közre, amit ennek a beadandó feladatnak az elkészítéséhez használtam.
+    A kód elrendezése megfelel a Python konvencióknak és ajánlásoknak.
+
+    \lstinputlisting[language=Python,numbers=left,frame=trbl,caption={Tördelő script}]{formatter.py}
 
     \chapter{Függelék}\label{ch:fuggelek}
 

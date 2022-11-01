@@ -8,7 +8,8 @@ def read_file(path):
 
 
 def break_sentences(content):
-    pattern = r"(?<!pl)\. (?!\n)"  # '. ' if it's not standing after 'pl' and there is no newline after
+    # '. ' if it's not after 'pl' and not before newline:
+    pattern = r"(?<!pl)\. (?!\n)"
     replacement = ".\n"
     result = re.sub(pattern, replacement, content)
     return result
