@@ -12,10 +12,14 @@
 
 \usepackage{amsmath}
 \usepackage{mathtools}
+\usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{amsfonts}
+
 \theoremstyle{definition}
 \newtheorem{definicio}{Definíció}[chapter]
 
+\DeclareMathOperator{\arctg}{arctg}
 
 \begin{document}
 
@@ -235,6 +239,15 @@
     Természetesen vannak események, amik kettőnél több szereplő közreműködésével alakulnak ki,
         de a karakterek egymásra gyakorolt hatása parciális, nem függ össze.
 
+    \begin{equation}\label{eq:g-fuggveny}
+        g \colon \mathbb{R} \setminus \left\{ \frac{k\pi}{2} : k \in \mathbb{Z}\right\} \rightarrow \mathbb{R}, \qquad
+        g(x) \coloneqq
+        \begin{cases}
+            \frac{\arctg^2(x + \pi)}{\sin(2x)}, & \text{ha } x \geq \frac{2}{3}, \\
+            \cos^4 (5x), & \text{különben.}
+        \end{cases}
+    \end{equation}
+
     \section{Két jó karakter találkozása}\label{sec:ket-jo-karakter-talalkozasa}
 
     Jókai legtöbb regényéhez hasonlóan Az új földesúrban is teljesül a következő szabály.
@@ -285,6 +298,7 @@
 
     A rossz szereplők találkozására általánosan igaz, hogy eleinte együtt tudnak működni,
         de végeredményben kölcsönösen akadályozzák egymást céljaik elérésében.
+    Lásd \aref{eq:g-fuggveny}.~egyenletet.
 
     Ez az összefüggés a három fő rossz karakter (Grisák, Straff és Pajtayné) között teljesül.
     Miután Hermine meghal, Grisák elesik egy nagyobb összegtől, Straffnak viszont vissza kell mennie a cabinet noir-ba.
